@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  strangeness_id: 1
+  strangeness_type: MyString
+  strangeness_mebog: MyText
+  strangeness_fvs: MyText
+
+two:
+  strangeness_id: 1
+  strangeness_type: MyString
+  strangeness_mebog: MyText
+  strangeness_fvs: MyText

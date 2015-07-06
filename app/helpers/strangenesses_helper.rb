@@ -1,0 +1,2 @@
+module StrangenessesHelper
+end

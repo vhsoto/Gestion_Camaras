@@ -1,0 +1,34 @@
+<h1>Listado completo de cámaras</h1>
+<p>Aquí se encuentran listadas todas las cámaras de los proyectos: <br>
+	<strong>Conexión Humana, Arrendadas, Propias, Colegios, Transmilenio y UTE</strong>
+</p>
+<br>
+<div class="table table-responsive">
+	<table class="table">
+  <thead>
+    <tr>
+      <th>Punto</th>
+      <th>Orientación</th>
+      <th>Dirección</th>
+      <th>Strangeness fvs</th>
+      <th>Strangeness mebog</th>
+      <th>Polígono</th>
+      <th>Condición</th>
+      <!-- <th colspan="3"></th> -->
+    </tr>
+  </thead>
+
+  <tbody>    
+		<%= render @human_connections %>
+		<%= render @leaseds %>
+		<%= render @owns %>
+		<%= render @schools %>
+		<%= render @transmilenios %>
+		<%= render @unit_temporals %>
+	</tbody>
+</table>
+</div>
+
+
+<%= fa_stacked_icon "twitter", base: "square-o", background: "#000" %>
+<%= fa_icon "quote-left 2x", class: "text-muted pull-left" %>

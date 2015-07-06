@@ -1,0 +1,2 @@
+module LeasedsHelper
+end

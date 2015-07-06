@@ -1,0 +1,2 @@
+module HumanConnectionsHelper
+end

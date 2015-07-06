@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spot:</strong>
+  <%= @own.spot %>
+</p>
+
+<p>
+  <strong>Orientation:</strong>
+  <%= @own.orientation %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @own.address %>
+</p>
+
+<p>
+  <strong>Strangeness fvs:</strong>
+  <%= @own.strangeness_fvs %>
+</p>
+
+<p>
+  <strong>Strangeness mebog:</strong>
+  <%= @own.strangeness_mebog %>
+</p>
+
+<p>
+  <strong>Polygon:</strong>
+  <%= @own.polygon %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @own.condition %>
+</p>
+
+<%= link_to 'Edit', edit_own_path(@own) %> |
+<%= link_to 'Back', owns_path %>

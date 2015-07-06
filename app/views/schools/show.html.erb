@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spot:</strong>
+  <%= @school.spot %>
+</p>
+
+<p>
+  <strong>Orientation:</strong>
+  <%= @school.orientation %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @school.address %>
+</p>
+
+<p>
+  <strong>Strangeness fvs:</strong>
+  <%= @school.strangeness_fvs %>
+</p>
+
+<p>
+  <strong>Strangeness mebog:</strong>
+  <%= @school.strangeness_mebog %>
+</p>
+
+<p>
+  <strong>Polygon:</strong>
+  <%= @school.polygon %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @school.condition %>
+</p>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

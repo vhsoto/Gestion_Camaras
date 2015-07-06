@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transmilenios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spot</th>
+      <th>Orientation</th>
+      <th>Address</th>
+      <th>Strangeness fvs</th>
+      <th>Strangeness mebog</th>
+      <th>Polygon</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transmilenios.each do |transmilenio| %>
+      <tr>
+        <td><%= transmilenio.spot %></td>
+        <td><%= transmilenio.orientation %></td>
+        <td><%= transmilenio.address %></td>
+        <td><%= transmilenio.strangeness_fvs %></td>
+        <td><%= transmilenio.strangeness_mebog %></td>
+        <td><%= transmilenio.polygon %></td>
+        <td><%= transmilenio.condition %></td>
+        <td><%= link_to 'Show', transmilenio %></td>
+        <td><%= link_to 'Edit', edit_transmilenio_path(transmilenio) %></td>
+        <td><%= link_to 'Destroy', transmilenio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transmilenio', new_transmilenio_path %>

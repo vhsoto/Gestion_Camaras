@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spot:</strong>
+  <%= @leased.spot %>
+</p>
+
+<p>
+  <strong>Orientation:</strong>
+  <%= @leased.orientation %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @leased.address %>
+</p>
+
+<p>
+  <strong>Strangeness fvs:</strong>
+  <%= @leased.strangeness_fvs %>
+</p>
+
+<p>
+  <strong>Strangeness mebog:</strong>
+  <%= @leased.strangeness_mebog %>
+</p>
+
+<p>
+  <strong>Polygon:</strong>
+  <%= @leased.polygon %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @leased.condition %>
+</p>
+
+<%= link_to 'Edit', edit_leased_path(@leased) %> |
+<%= link_to 'Back', leaseds_path %>

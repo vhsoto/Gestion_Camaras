@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Unit Temporals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spot</th>
+      <th>Orientation</th>
+      <th>Address</th>
+      <th>Strangeness fvs</th>
+      <th>Strangeness mebog</th>
+      <th>Polygon</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unit_temporals.each do |unit_temporal| %>
+      <tr>
+        <td><%= unit_temporal.spot %></td>
+        <td><%= unit_temporal.orientation %></td>
+        <td><%= unit_temporal.address %></td>
+        <td><%= unit_temporal.strangeness_fvs %></td>
+        <td><%= unit_temporal.strangeness_mebog %></td>
+        <td><%= unit_temporal.polygon %></td>
+        <td><%= unit_temporal.condition %></td>
+        <td><%= link_to 'Show', unit_temporal %></td>
+        <td><%= link_to 'Edit', edit_unit_temporal_path(unit_temporal) %></td>
+        <td><%= link_to 'Destroy', unit_temporal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit temporal', new_unit_temporal_path %>

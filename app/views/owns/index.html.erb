@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Owns</h1>
+
+<h4>Subir archivo plano de cámaras</h4>
+<br>
+<%= form_tag import_owns_path, multipart: true do %>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <%= file_field_tag :file, required: true, class: "btn btn-info" %>
+      <p class="help-block">Nota: La extensión del archivo debe ser .csv.</p>
+    </div>
+  </div>
+</div>  
+<%= submit_tag "cargar cámaras", class: "btn btn-info btn-sm" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spot</th>
+      <th>Orientation</th>
+      <th>Address</th>
+      <th>Strangeness fvs</th>
+      <th>Strangeness mebog</th>
+      <th>Polygon</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owns.each do |own| %>
+      <tr>
+        <td><%= own.spot %></td>
+        <td><%= own.orientation %></td>
+        <td><%= own.address %></td>
+        <td><%= own.strangeness_fvs %></td>
+        <td><%= own.strangeness_mebog %></td>
+        <td><%= own.polygon %></td>
+        <td><%= own.condition %></td>
+        <td><%= link_to 'Show', own %></td>
+        <td><%= link_to 'Edit', edit_own_path(own) %></td>
+        <td><%= link_to 'Destroy', own, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Own', new_own_path %>

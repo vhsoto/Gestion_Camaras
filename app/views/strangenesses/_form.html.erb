@@ -1,0 +1,33 @@
+<%= form_for(@strangeness) do |f| %>
+  <% if @strangeness.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@strangeness.errors.count, "error") %> prohibited this strangeness from being saved:</h2>
+
+      <ul>
+      <% @strangeness.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strangeness_id %><br>
+    <%= f.number_field :strangeness_id %>
+  </div>
+  <div class="field">
+    <%= f.label :strangeness_type %><br>
+    <%= f.text_field :strangeness_type %>
+  </div>
+  <div class="field">
+    <%= f.label :strangeness_mebog %><br>
+    <%= f.text_area :strangeness_mebog %>
+  </div>
+  <div class="field">
+    <%= f.label :strangeness_fvs %><br>
+    <%= f.text_area :strangeness_fvs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

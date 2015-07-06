@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spot:</strong>
+  <%= @transmilenio.spot %>
+</p>
+
+<p>
+  <strong>Orientation:</strong>
+  <%= @transmilenio.orientation %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @transmilenio.address %>
+</p>
+
+<p>
+  <strong>Strangeness fvs:</strong>
+  <%= @transmilenio.strangeness_fvs %>
+</p>
+
+<p>
+  <strong>Strangeness mebog:</strong>
+  <%= @transmilenio.strangeness_mebog %>
+</p>
+
+<p>
+  <strong>Polygon:</strong>
+  <%= @transmilenio.polygon %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @transmilenio.condition %>
+</p>
+
+<%= link_to 'Edit', edit_transmilenio_path(@transmilenio) %> |
+<%= link_to 'Back', transmilenios_path %>
