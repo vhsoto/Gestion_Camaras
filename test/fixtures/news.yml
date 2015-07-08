@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mebog: MyText
+  fvs: MyText
+  newable_id: 
+  newable_type: Newable
+
+two:
+  mebog: MyText
+  fvs: MyText
+  newable_id: 
+  newable_type: Newable

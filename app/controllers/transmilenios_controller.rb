@@ -61,6 +61,15 @@ class TransmileniosController < ApplicationController
     end
   end
 
+  def import
+    begin
+      Transmilenio.import(params[:file])
+      redirect_to transmilenios_url, notice: "Archivo plano subido con éxito"
+    rescue
+      redirect_to transmilenios_url, notice: "Formato CSV no valido."
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transmilenio

@@ -64,9 +64,9 @@ class SchoolsController < ApplicationController
   def import
     begin
       School.import(params[:file])
-      redirect_to owns_url, notice: "Archivo plano subido con éxito"
+      redirect_to schools_url, notice: "Archivo plano subido con éxito"
     rescue
-      redirect_to owns_url, notice: "Formato CSV no valido."
+      redirect_to schools_url, notice: "Formato CSV no valido."
     end
   end
 

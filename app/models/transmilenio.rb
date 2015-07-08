@@ -1,5 +1,5 @@
 class Transmilenio < ActiveRecord::Base
-	has_many :strangenesses, dependent: :destroy
+	has_many :strangenesses, :as => :commentable, dependent: :destroy
 	
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|

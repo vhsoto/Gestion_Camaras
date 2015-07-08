@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706161342) do
+ActiveRecord::Schema.define(version: 20150707223342) do
 
   create_table "human_connections", force: :cascade do |t|
     t.string   "spot"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20150706161342) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "news", force: :cascade do |t|
+    t.text     "mebog"
+    t.text     "fvs"
+    t.integer  "newable_id"
+    t.string   "newable_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "news", ["newable_type", "newable_id"], name: "index_news_on_newable_type_and_newable_id"
+
   create_table "owns", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
@@ -57,15 +68,6 @@ ActiveRecord::Schema.define(version: 20150706161342) do
     t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "strangenesses", force: :cascade do |t|
-    t.integer  "strangeness_id"
-    t.string   "strangeness_type"
-    t.text     "strangeness_mebog"
-    t.text     "strangeness_fvs"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

@@ -1,14 +1,31 @@
-
-      <tr>
-        <td><%= leased.spot %></td>
-        <td><%= leased.orientation %></td>
-        <td><%= leased.address %></td>
-        <td><%= leased.strangeness_fvs %></td>
-        <td><%= leased.strangeness_mebog %></td>
-        <td><%= leased.polygon %></td>
-        <td><%= leased.condition %></td>
-        <td><%= link_to 'Show', leased %></td>
-        <td><%= link_to 'Edit', edit_leased_path(leased) %></td>
-        <td><%= link_to 'Destroy', leased, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<tr>
+<td class="text-center"><%= leased.polygon ? poligono : no_poligono %></td>
+<td><%= leased.spot %></td>
+<td><%= leased.orientation %></td>
+<td><%= leased.address %></td>
+<td><%= leased.strangeness_fvs %></td>
+<td><%= leased.strangeness_mebog %></td>
+<td class="text-center">
+    <% if leased.condition? %>
+        <div class="col-sm-1">
+            <div class="round round-sm hollow green">
+                <%= bueno %>
+            </div>
+        </div>
+    <% else %>
+        <div class="col-sm-1">
+            <div class="round round-sm hollow red">
+                <%= malo %>
+            </div>
+        </div>        
+    <% end %>
+</td>        
+<td>
+    <%= link_to leased do %>
+        <i class="fa fa-search"></i>
+    <% end %>
+</td>
+<!-- <td><%# link_to 'Edit', edit_leased_path(leased) %></td>
+<td><%# link_to 'Destroy', leased, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+</tr>
   

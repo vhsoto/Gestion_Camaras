@@ -1,37 +1,37 @@
 Rails.application.routes.draw do
   
-  resources :strangenesses
+  resources :news
 
   get 'total_camera/index'
   root 'total_camera#index'
 
   resources :unit_temporals do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 
   resources :transmilenios do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 
   resources :human_connections do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 
   resources :owns do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 
   resources :leaseds do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 
   resources :schools do
-    resources :strangenesses
+    resources :news
     collection { post :import }
   end
 

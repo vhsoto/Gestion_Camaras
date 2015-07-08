@@ -2,18 +2,22 @@
 
 <h1>Listing Schools</h1>
 
-<h4>Subir archivo plano de cámaras</h4>
-<br>
 <%= form_tag import_schools_path, multipart: true do %>
 <div class="form-group">
   <div class="row">
-    <div class="col-md-4 col-lg-4">
-      <%= file_field_tag :file, required: true, class: "btn btn-info" %>
-      <p class="help-block">Nota: La extensión del archivo debe ser .csv.</p>
+    <div class="col-md-3 col-lg-3">
+      <%= file_field_tag :file, required: true, class: "btn btn-sm btn-info" %>
+      <p class="help-block">Nota: La extensión del archivo debe ser .csv</p>
+    </div>
+    <div>
+      <%= button_tag(type: 'submit', class: "btn btn-info") do %>
+  
+        <i class="fa fa-arrow-circle-up"></i>
+      <% end %>
     </div>
   </div>
 </div>  
-<%= submit_tag "cargar cámaras", class: "btn btn-info btn-sm" %>
+
 <% end %>
 
 <table>

@@ -2,6 +2,23 @@
 
 <h1>Listing Unit Temporals</h1>
 
+<%= form_tag import_unit_temporals_path, multipart: true do %>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-3 col-lg-3">
+      <%= file_field_tag :file, required: true, class: "btn btn-sm btn-info" %>
+      <p class="help-block">Nota: La extensión del archivo debe ser .csv</p>
+    </div>
+    <div>
+      <%= button_tag(type: 'submit', class: "btn btn-info") do %>  
+        <i class="fa fa-arrow-circle-up"></i>
+      <% end %>
+    </div>
+  </div>
+</div>  
+
+<% end %>
+
 <table>
   <thead>
     <tr>

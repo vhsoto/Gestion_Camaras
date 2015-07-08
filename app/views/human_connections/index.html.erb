@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-
-<h1>Listing Human Connections</h1>
-
-<h4>Subir archivo plano de cámaras</h4>
+<h1>Listado cámaras Conexión Humana</h1>
 <br>
+  
+  <%= link_to 'Agregar cámara', new_human_connection_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to root_path, class: "btn btn-warning btn-sm" do %>
+    <i class="fa fa-home"></i>
+  <% end %>
+
+
+<hr>
+
 <%= form_tag import_human_connections_path, multipart: true do %>
 <div class="form-group">
   <div class="row">
-    <div class="col-md-4 col-lg-4">
-      <%= file_field_tag :file, required: true, class: "btn btn-info" %>
-      <p class="help-block">Nota: La extensión del archivo debe ser .csv.</p>
+    <div class="col-md-3 col-lg-3">
+      <%= file_field_tag :file, required: true, class: "btn btn-sm btn-primary" %>
+      <p class="help-block"><strong>Nota: El archivo debe ser .csv</strong></p>
+    </div>
+    <div>
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>  
+        <i class="fa fa-arrow-circle-up"></i>
+      <% end %>
     </div>
   </div>
 </div>  
-<%= submit_tag "cargar cámaras", class: "btn btn-info btn-sm" %>
+
 <% end %>
 
 
@@ -42,9 +53,18 @@
         <td><%= human_connection.strangeness_mebog %></td>
         <td><%= human_connection.polygon %></td>
         <td><%= human_connection.condition %></td>
-        <td><%= link_to 'Show', human_connection %></td>
-        <td><%= link_to 'Edit', edit_human_connection_path(human_connection) %></td>
-        <td><%= link_to 'Destroy', human_connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to human_connection do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+        </td>
+        <td><%= link_to edit_human_connection_path(human_connection) do %>
+              <span class="label label-warning"><i class="fa fa-pencil"></i></span>
+            <% end %>
+        </td>
+        <td><%= link_to human_connection, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="label label-danger"><i class="fa fa-trash"></i></span>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +72,4 @@
 
 <br>
 
-<%= link_to 'New Human connection', new_human_connection_path %>
+<%= link_to 'Agregar cámara', new_human_connection_path, class: "btn btn-primary btn-sm"  %>

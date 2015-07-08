@@ -1,41 +1,33 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Spot:</strong>
-  <%= @human_connection.spot %>
-</p>
-
-<p>
-  <strong>Orientation:</strong>
-  <%= @human_connection.orientation %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @human_connection.address %>
-</p>
-
-<p>
-  <strong>Strangeness fvs:</strong>
-  <%= @human_connection.strangeness_fvs %>
-</p>
-
-<p>
-  <strong>Strangeness mebog:</strong>
-  <%= @human_connection.strangeness_mebog %>
-</p>
-
-<p>
-  <strong>Polygon:</strong>
-  <%= @human_connection.polygon %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @human_connection.condition %>
-</p>
+<div class="table-responsive"> <%= link_to 'Back', human_connections_path %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Polygon</th>
+        <th>Spot</th>
+        <th>Orientation</th>
+        <th>Address</th>        
+        <th>Location</th>
+        <th>Condition</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @human_connection.polygon %></td>
+        <td><%= @human_connection.spot %></td>
+        <td><%= @human_connection.orientation %></td>
+        <td><%= @human_connection.address %></td>
+        <td><%= "localidad" %></td>
+        <td><%= @human_connection.condition %></td>            
+        <td><%= link_to edit_human_connection_path(@human_connection) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>            
+        <td><%= link_to 'Agregar novedad', new_human_connection_news_path(@human_connection), class: "btn btn-sm btn-primary" %></td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
 
 
-<br>
-<%= link_to 'Edit', edit_human_connection_path(@human_connection) %> |
-<%= link_to 'Back', human_connections_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mebog:</strong>
+  <%= @news.mebog %>
+</p>
+
+<p>
+  <strong>Fvs:</strong>
+  <%= @news.fvs %>
+</p>
+
+<p>
+  <strong>Newable:</strong>
+  <%= @news.newable %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_path %>

@@ -1,16 +1,31 @@
-
-      <tr>
-        <td><%= human_connection.spot %></td>
-        <td><%= human_connection.orientation %></td>
-        <td><%= human_connection.address %></td>
-        <td><%= human_connection.strangeness_fvs %></td>
-        <td><%= human_connection.strangeness_mebog %></td>
-        <td><%= human_connection.polygon ? poligono : no_poligono %></td>
-        <td><%= human_connection.condition ? bueno : malo %></td>
-        <td><%= link_to "nuevo", new_human_connection_path %></td>
-        <!-- <td><%# link_to 'Show', human_connection %></td>
-        <td><%# link_to 'Edit', edit_human_connection_path(human_connection) %></td>
-        <td><%# link_to 'Destroy', human_connection, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
+<tr>
+    <td><%= human_connection.polygon ? poligono : no_poligono %></td>
+    <td><%= human_connection.spot %></td>
+    <td><%= human_connection.orientation %></td>
+    <td><%= human_connection.address %></td>
+    <td><%= human_connection.strangeness_fvs %></td>
+    <td><%= human_connection.strangeness_mebog %></td>    
+    <td class="text-center">
+        <% if human_connection.condition? %>
+            <div class="col-sm-1">
+                <div class="round round-sm green">
+                    <%= bueno %>
+                </div>
+            </div>
+        <% else %>
+            <div class="col-sm-1">
+                <div class="round round-sm red">
+                    <%= malo %>
+                </div>
+            </div>        
+        <% end %>
+    </td>        
+    <td><%= link_to human_connection do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+    </td>
+    <!-- <td><%# link_to 'Edit', edit_human_connection_path(human_connection) %></td>
+    <td><%# link_to 'Destroy', human_connection, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> 
+</tr>
 
   

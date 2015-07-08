@@ -34,6 +34,6 @@
   <strong>Condition:</strong>
   <%= @transmilenio.condition %>
 </p>
-
+<%= link_to 'nuevo', new_transmilenio_strangeness_path(@transmilenio) %>
 <%= link_to 'Edit', edit_transmilenio_path(@transmilenio) %> |
 <%= link_to 'Back', transmilenios_path %>

@@ -8,10 +8,10 @@ module ApplicationHelper
 	end
 
 	def bueno
-		content_tag(:span, "Buena", class: "label label-success")
+		fa_icon "check"
 	end
 
 	def malo
-		content_tag(:span, "Malo", class: "label label-danger")
+		fa_icon "close"
 	end
 end

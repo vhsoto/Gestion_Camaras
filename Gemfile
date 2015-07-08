@@ -45,3 +45,6 @@ group :development, :test do
 end
 
 gem "font-awesome-rails"
+#gem 'font-awesome-sass', '~> 4.2.0'
+
+gem 'htmlentities', '~> 4.3.3'
