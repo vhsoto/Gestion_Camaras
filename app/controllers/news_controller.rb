@@ -15,7 +15,7 @@ class NewsController < ApplicationController
   # GET /news/new
   def new
     @newable = encontrar
-    @news = New.new
+    @news = @newable.news.build
     # @newable = find_newable
     # @new = @newable.news.build(news_params)
   end
