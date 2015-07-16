@@ -24,12 +24,16 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :strangeness_fvs %><br>
-    <%= f.text_area :strangeness_fvs %>
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
   </div>
   <div class="field">
-    <%= f.label :strangeness_mebog %><br>
-    <%= f.text_area :strangeness_mebog %>
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <%= f.label :cosec %><br>
+        <%= f.select :cosec,  options_for_select([['Chapinero', 'Chapinero'], ['Kennedy', 'Kennedy'], ['Pte Aranda', 'Pte Aranda'], ['Ciudad Bolivar', 'Ciudad Bolivar'], ['CAD', 'CAD']], @human_connection.cosec), options ={:prompt => "Seleccione un cosec"},class: "form-control" %>
+      </div>
+    </div>     
   </div>
   <div class="field">
     <%= f.label :polygon %><br>

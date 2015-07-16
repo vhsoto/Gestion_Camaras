@@ -65,7 +65,8 @@ class HumanConnectionsController < ApplicationController
   def import
     begin
       HumanConnection.import(params[:file])
-      redirect_to human_connections_url, notice: "Archivo plano subido con éxito"
+      flash[:notice] = "Archivo plano subido con éxito"
+      redirect_to human_connections_url
     rescue
       redirect_to human_connections_url, notice: "Formato CSV no valido."
     end
@@ -81,6 +82,6 @@ class HumanConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def human_connection_params
-      params.require(:human_connection).permit(:spot, :orientation, :address, :strangeness_fvs, :strangeness_mebog, :polygon, :condition)
+      params.require(:human_connection).permit(:spot, :orientation, :address, :polygon, :condition, :location, :cosec)
     end
 end

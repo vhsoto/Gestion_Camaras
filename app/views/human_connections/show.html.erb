@@ -6,6 +6,8 @@
         <th>Polygon</th>
         <th>Spot</th>
         <th>Orientation</th>
+        <th>Location</th>
+        <th>Cosec</th>
         <th>Address</th>        
         <th>Location</th>
         <th>Condition</th>
@@ -18,7 +20,8 @@
         <td><%= @human_connection.spot %></td>
         <td><%= @human_connection.orientation %></td>
         <td><%= @human_connection.address %></td>
-        <td><%= "localidad" %></td>
+        <td><%= human_connection.location %></td>
+        <td><%= human_connection.cosec %></td>
         <td><%= @human_connection.condition %></td>            
         <td><%= link_to edit_human_connection_path(@human_connection) do %>
               <i class="fa fa-pencil"></i>

@@ -68,23 +68,19 @@ class NewsController < ApplicationController
 
   private
 
-    # def find_newable
-    #   params.each do |name, value|
-    #     if name =~ /(.+)_id$/
-    #       return $1.classify.constantize.find(value)
-    #     end
-    #   end
-    #   nil
-    # end
     def encontrar
       if params[:human_connection_id]
           @newable = HumanConnection.find(params[:human_connection_id])
       elsif params[:leased_id]
           @newable = Leased.find(params[:leased_id])
-      # elsif params[:event_id]
-      #     @newable = Event.find(params[:event_id])
-      # elsif params[:article_id]
-      #     @newable = Article.find(params[:article_id])
+      elsif params[:own_id]
+          @newable = Own.find(params[:own_id])
+      elsif params[:school_id]
+          @newable = School.find(params[:school_id])
+      elsif params[:transmilenio_id]
+          @newable = Transmilenio.find(params[:transmilenio_id])
+      elsif params[:unit_temporal]
+          @newable = UnitTemporal.find(params[:unit_temporal])
       end
     end
 

@@ -78,6 +78,6 @@ class UnitTemporalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_temporal_params
-      params.require(:unit_temporal).permit(:spot, :orientation, :address, :strangeness_fvs, :strangeness_mebog, :polygon, :condition)
+      params.require(:unit_temporal).permit(:spot, :orientation, :address, :polygon, :condition, :location, :cosec)
     end
 end

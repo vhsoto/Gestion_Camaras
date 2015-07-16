@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :news
 
-  get 'total_camera/index'
+  post 'total_camera/import' => 'total_camera#import'
   root 'total_camera#index'
+
+  resources :news
 
   resources :unit_temporals do
     resources :news

@@ -78,6 +78,6 @@ class TransmileniosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transmilenio_params
-      params.require(:transmilenio).permit(:spot, :orientation, :address, :strangeness_fvs, :strangeness_mebog, :polygon, :condition)
+      params.require(:transmilenio).permit(:spot, :orientation, :address, :polygon, :condition, :location, :cosec)
     end
 end

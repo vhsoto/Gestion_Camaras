@@ -1,6 +1,6 @@
 class Leased < ActiveRecord::Base
 	
-	has_many :news, as: :newable, dependent: :destroy
+	has_many :news, as: :newable, class_name: "New", dependent: :destroy
 	
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|

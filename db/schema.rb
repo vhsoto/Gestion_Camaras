@@ -11,30 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707223342) do
+ActiveRecord::Schema.define(version: 20150710215642) do
 
   create_table "human_connections", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
   create_table "leaseds", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
   create_table "news", force: :cascade do |t|
@@ -52,48 +52,48 @@ ActiveRecord::Schema.define(version: 20150707223342) do
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
   create_table "schools", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
   create_table "transmilenios", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.text     "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
   create_table "unit_temporals", force: :cascade do |t|
     t.string   "spot"
     t.string   "orientation"
     t.string   "address"
-    t.text     "strangeness_fvs"
-    t.string   "strangeness_mebog"
     t.boolean  "polygon"
     t.boolean  "condition"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cosec"
+    t.string   "location"
   end
 
 end

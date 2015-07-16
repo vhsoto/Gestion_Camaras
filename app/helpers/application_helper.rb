@@ -12,6 +12,6 @@ module ApplicationHelper
 	end
 
 	def malo
-		fa_icon "close"
+		fa_icon "minus"
 	end
 end
