@@ -4,7 +4,7 @@ class HumanConnectionsController < ApplicationController
   # GET /human_connections
   # GET /human_connections.json
   def index
-    @human_connections = HumanConnection.all
+    @human_connections = HumanConnection.all.page(params[:page]).per(5)
   end
 
   # GET /human_connections/1

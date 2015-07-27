@@ -4,7 +4,7 @@ class OwnsController < ApplicationController
   # GET /owns
   # GET /owns.json
   def index
-    @owns = Own.all
+    @owns = Own.all.page(params[:page]).per(4)
   end
 
   # GET /owns/1
