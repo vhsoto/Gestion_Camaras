@@ -11,8 +11,42 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-ui
+//= require bootstrap-switch
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
+
+function habilitarFiltro() {
+  //Habilita el filtro de busqueda
+  $('#filter').keyup(function() {
+    var rex;
+    rex = new RegExp($(this).val(), 'i');
+    $('.searchable tr').hide();
+    $('.searchable tr').filter(function() {
+      return rex.test($(this).text());
+    }).show();
+  });
+}
+
+$(document).on('ready page:load', habilitarFiltro);
+
+$(document).on('ready page:load', function(){
+  $('input:checkbox').bootstrapSwitch();
+
+  setTimeout(function(){    
+    $('.alert').fadeToggle(1700);
+  });
+
+  $('.datepicker').datepicker({
+    format: "dd-mm-yyyy",
+    language: "es",
+    todayHighlight: true,
+    autoclose: true,
+    toggleActive: true
+  });
+})
+
 

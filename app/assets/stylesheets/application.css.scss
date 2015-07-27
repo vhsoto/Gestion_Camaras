@@ -1,6 +1,15 @@
+/*
+ *= require jquery-ui
+ *= require bootstrap-datepicker3
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "bootstrap3-switch";
+
+
+
 
 .row {
     margin-top: 32px;   
@@ -53,7 +62,7 @@
 }
 
 .round.red {
-    background-color: #B40404;
+    background-color: #610B0B;
 }
 
 .round.green {
@@ -69,11 +78,11 @@
 }
 
 .round.hollow.red {
-    color: #B40404;
+    color: #610B0B;
     background-color: #FFF;    
-    -webkit-box-shadow: 0px 0px 0px 3px #B40404;
-    -moz-box-shadow: 0px 0px 0px 3px #B40404;
-    box-shadow: 0px 0px 0px 3px #B40404;
+    -webkit-box-shadow: 0px 0px 0px 3px #610B0B;
+    -moz-box-shadow: 0px 0px 0px 3px #610B0B;
+    box-shadow: 0px 0px 0px 3px #610B0B;
 }
 
 .round.hollow.green {
@@ -82,4 +91,46 @@
     -webkit-box-shadow: 0px 0px 0px 3px #42A129;
     -moz-box-shadow: 0px 0px 0px 3px #42A129;
     box-shadow: 0px 0px 0px 3px #42A129;
+}
+
+.notice {
+    padding: 15px;
+    background-color: #fafafa;
+    border-left: 6px solid #7f7f84;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+.notice-sm {
+    padding: 10px;
+    font-size: 80%;
+}
+.notice-lg {
+    padding: 35px;
+    font-size: large;
+}
+.notice-success {
+    border-color: #80D651;
+}
+.notice-success>strong {
+    color: #80D651;
+}
+.notice-info {
+    border-color: #45ABCD;
+}
+.notice-info>strong {
+    color: #45ABCD;
+}
+.notice-warning {
+    border-color: #FEAF20;
+}
+.notice-warning>strong {
+    color: #FEAF20;
+}
+.notice-danger {
+    border-color: #d73814;
+}
+.notice-danger>strong {
+    color: #d73814;
 }

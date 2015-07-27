@@ -1,0 +1,42 @@
+<%= form_for([@eventable, @event]) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-lg-2"> 
+        <%= f.label :date, "Fecha novedad" %><br>
+        <%= f.text_field :date, class: "form-control datepicker" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-lg-2"> 
+        <%= f.label :mebog, "Novedad MEBOG" %><br>
+        <%= f.text_area :mebog, size: "15x4", class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-lg-2"> 
+        <%= f.label :fvs, "Novedad FVS" %><br>
+        <%= f.text_area :fvs, size: "15x4", class: "form-control" %>
+      </div>
+    </div>
+  </div>    
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-sm btn-info" %>
+
+  <%= f.hidden_field :eventable_id %>
+<% end %>

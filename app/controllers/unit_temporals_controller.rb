@@ -28,7 +28,7 @@ class UnitTemporalsController < ApplicationController
 
     respond_to do |format|
       if @unit_temporal.save
-        format.html { redirect_to unit_temporals_path, notice: 'Unit temporal was successfully created.' }
+        format.html { redirect_to unit_temporals_path, notice: 'Cámara agregada con éxito!' }
         format.json { render :show, status: :created, location: @unit_temporal }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class UnitTemporalsController < ApplicationController
   def update
     respond_to do |format|
       if @unit_temporal.update(unit_temporal_params)
-        format.html { redirect_to unit_temporals_path, notice: 'Unit temporal was successfully updated.' }
+        format.html { redirect_to unit_temporals_path, notice: 'Cámara actualizada con éxito!' }
         format.json { render :show, status: :ok, location: @unit_temporal }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class UnitTemporalsController < ApplicationController
   def destroy
     @unit_temporal.destroy
     respond_to do |format|
-      format.html { redirect_to unit_temporals_url, notice: 'Unit temporal was successfully destroyed.' }
+      format.html { redirect_to unit_temporals_url, notice: 'Cámara eliminada con éxito!' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,7 @@ class UnitTemporalsController < ApplicationController
       UnitTemporal.import(params[:file])
       redirect_to unit_temporals_url, notice: "Archivo plano subido con éxito"
     rescue
-      redirect_to unit_temporals_url, notice: "Formato CSV no valido."
+      redirect_to unit_temporals_url, alert: "Archivo no subido con éxito. Revise la extensión del archivo."
     end
   end
 

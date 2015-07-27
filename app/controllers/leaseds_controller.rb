@@ -28,7 +28,7 @@ class LeasedsController < ApplicationController
 
     respond_to do |format|
       if @leased.save
-        format.html { redirect_to @leased, notice: 'Leased was successfully created.' }
+        format.html { redirect_to @leased, notice: 'Cámara agregada con éxito!' }
         format.json { render :show, status: :created, location: @leased }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LeasedsController < ApplicationController
   def update
     respond_to do |format|
       if @leased.update(leased_params)
-        format.html { redirect_to @leased, notice: 'Leased was successfully updated.' }
+        format.html { redirect_to @leased, notice: 'Cámara actualizada con éxito!' }
         format.json { render :show, status: :ok, location: @leased }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class LeasedsController < ApplicationController
   def destroy
     @leased.destroy
     respond_to do |format|
-      format.html { redirect_to leaseds_url, notice: 'Leased was successfully destroyed.' }
+      format.html { redirect_to leaseds_url, notice: 'Cámara eliminada con éxito!' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,7 @@ class LeasedsController < ApplicationController
       Leased.import(params[:file])
       redirect_to leaseds_url, notice: "Archivo plano subido con éxito"
     rescue
-      redirect_to leaseds_url, notice: "Formato CSV no valido."
+      redirect_to leaseds_url, alert: "Archivo no subido con éxito. Revise la extensión del archivo."
     end
   end
 

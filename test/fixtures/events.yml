@@ -3,11 +3,13 @@
 one:
   mebog: MyText
   fvs: MyText
-  newable_id: 
-  newable_type: Newable
+  date: 2015-07-24 19:31:56
+  eventable_id: 
+  eventable_type: Eventable
 
 two:
   mebog: MyText
   fvs: MyText
-  newable_id: 
-  newable_type: Newable
+  date: 2015-07-24 19:31:56
+  eventable_id: 
+  eventable_type: Eventable

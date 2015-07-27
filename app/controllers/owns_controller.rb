@@ -28,7 +28,7 @@ class OwnsController < ApplicationController
 
     respond_to do |format|
       if @own.save
-        format.html { redirect_to @own, notice: 'Own was successfully created.' }
+        format.html { redirect_to @own, notice: 'Cámara agregada con éxito!' }
         format.json { render :show, status: :created, location: @own }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class OwnsController < ApplicationController
   def update
     respond_to do |format|
       if @own.update(own_params)
-        format.html { redirect_to @own, notice: 'Own was successfully updated.' }
+        format.html { redirect_to @own, notice: 'Cámara actualizada con éxito!' }
         format.json { render :show, status: :ok, location: @own }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class OwnsController < ApplicationController
   def destroy
     @own.destroy
     respond_to do |format|
-      format.html { redirect_to owns_url, notice: 'Own was successfully destroyed.' }
+      format.html { redirect_to owns_url, notice: 'Cámara eliminada con éxito!' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,7 @@ class OwnsController < ApplicationController
       Own.import(params[:file])
       redirect_to owns_url, notice: "Archivo plano subido con éxito"
     rescue
-      redirect_to owns_url, notice: "Formato CSV no valido."
+      redirect_to owns_url, alert: "Archivo no subido con éxito. Revise la extensión del archivo."
     end
   end
 

@@ -1,39 +1,74 @@
-<p id="notice"><%= notice %></p>
+<br>
+<%= link_to 'Atrás', transmilenios_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>
+<br>
+<hr>
+<div class="table-responsive"> 
+  <table class="table">
+    <thead>
+      <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+    </thead>
 
-<p>
-  <strong>Spot:</strong>
-  <%= @transmilenio.spot %>
-</p>
+    <tbody>
+      <tr>
+        <td><%= @transmilenio.polygon ? poligono : no_poligono %></td>
+        <td><%= @transmilenio.spot %></td>
+        <td><%= @transmilenio.orientation %></td>
+        <td><%= @transmilenio.address %></td>
+        <td><%= @transmilenio.location %></td>
+        <td><%= @transmilenio.cosec %></td>
+        <td class="text-center">
+            <% if @transmilenio.condition? %>
+                <div class="col-sm-1">
+                    <div class="round round-sm green">
+                        <%= bueno %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="col-sm-1">
+                    <div class="round round-sm red">
+                        <%= malo %>
+                    </div>
+                </div>        
+            <% end %>
+        </td>
+        <td><%= link_to edit_transmilenio_path(@transmilenio) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
+<br>
+<%= link_to 'Agregar novedad', new_transmilenio_event_path(@transmilenio), class: "btn btn-sm btn-info" %>
+<br><br>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Novedad MEBOG</th>
+        <th>Novedad FVS</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<p>
-  <strong>Orientation:</strong>
-  <%= @transmilenio.orientation %>
-</p>
+    <tbody>
+      <%= render @transmilenio.events %>
+    </tbody>
+  </table>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @transmilenio.address %>
-</p>
-
-<p>
-  <strong>Strangeness fvs:</strong>
-  <%= @transmilenio.location %>
-</p>
-
-<p>
-  <strong>Strangeness mebog:</strong>
-  <%= @transmilenio.cosec %>
-</p>
-
-<p>
-  <strong>Polygon:</strong>
-  <%= @transmilenio.polygon %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @transmilenio.condition %>
-</p>
-<%= link_to 'nuevo', new_transmilenio_strangeness_path(@transmilenio) %>
-<%= link_to 'Edit', edit_transmilenio_path(@transmilenio) %> |
-<%= link_to 'Back', transmilenios_path %>
+<hr>
+<%= link_to 'Atrás', transmilenios_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>

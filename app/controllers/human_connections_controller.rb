@@ -29,7 +29,7 @@ class HumanConnectionsController < ApplicationController
 
     respond_to do |format|
       if @human_connection.save
-        format.html { redirect_to human_connections_url, notice: 'Human connection was successfully created.' }
+        format.html { redirect_to human_connections_url, notice: 'Cámara agregada con éxito!' }
         format.json { render :show, status: :created, location: @human_connection }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HumanConnectionsController < ApplicationController
   def update
     respond_to do |format|
       if @human_connection.update(human_connection_params)
-        format.html { redirect_to human_connections_url, notice: 'Human connection was successfully updated.' }
+        format.html { redirect_to human_connections_url, notice: 'Cámara actualizada con éxito!' }
         format.json { render :show, status: :ok, location: @human_connection }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HumanConnectionsController < ApplicationController
   def destroy
     @human_connection.destroy
     respond_to do |format|
-      format.html { redirect_to human_connections_url, notice: 'Human connection was successfully destroyed.' }
+      format.html { redirect_to human_connections_url, notice: 'Cámara eliminada con éxito!' }
       format.json { head :no_content }
     end
   end
@@ -68,7 +68,7 @@ class HumanConnectionsController < ApplicationController
       flash[:notice] = "Archivo plano subido con éxito"
       redirect_to human_connections_url
     rescue
-      redirect_to human_connections_url, notice: "Formato CSV no valido."
+      redirect_to human_connections_url, alert: "Archivo no subido con éxito. Revise la extensión del archivo."
     end
   end
 

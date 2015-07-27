@@ -1,39 +1,74 @@
-<p id="notice"><%= notice %></p>
+<br>
+<%= link_to 'Atrás', unit_temporals_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>
+<br>
+<hr>
+<div class="table-responsive"> 
+  <table class="table">
+    <thead>
+      <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+    </thead>
 
-<p>
-  <strong>Spot:</strong>
-  <%= @unit_temporal.spot %>
-</p>
+    <tbody>
+      <tr>
+        <td><%= @unit_temporal.polygon ? poligono : no_poligono %></td>
+        <td><%= @unit_temporal.spot %></td>
+        <td><%= @unit_temporal.orientation %></td>
+        <td><%= @unit_temporal.address %></td>
+        <td><%= @unit_temporal.location %></td>
+        <td><%= @unit_temporal.cosec %></td>
+        <td class="text-center">
+          <% if @unit_temporal.condition? %>
+              <div class="col-sm-1">
+                  <div class="round round-sm green">
+                      <%= bueno %>
+                  </div>
+              </div>
+          <% else %>
+              <div class="col-sm-1">
+                  <div class="round round-sm red">
+                      <%= malo %>
+                  </div>
+              </div>        
+          <% end %>
+        </td>
+        <td><%= link_to edit_unit_temporal_path(@unit_temporal) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
+<br>
+<%= link_to 'Agregar novedad', new_unit_temporal_event_path(@unit_temporal), class: "btn btn-sm btn-info" %>
+<br><br>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Novedad MEBOG</th>
+        <th>Novedad FVS</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<p>
-  <strong>Orientation:</strong>
-  <%= @unit_temporal.orientation %>
-</p>
+    <tbody>
+      <%= render @unit_temporal.events %>
+    </tbody>
+  </table>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @unit_temporal.address %>
-</p>
-
-<p>
-  <strong>Strangeness fvs:</strong>
-  <%= @unit_temporal.location %>
-</p>
-
-<p>
-  <strong>Strangeness mebog:</strong>
-  <%= @unit_temporal.cosec %>
-</p>
-
-<p>
-  <strong>Polygon:</strong>
-  <%= @unit_temporal.polygon %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @unit_temporal.condition %>
-</p>
-
-<%= link_to 'Edit', edit_unit_temporal_path(@unit_temporal) %> |
-<%= link_to 'Back', unit_temporals_path %>
+<hr>
+<%= link_to 'Atrás', unit_temporals_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>

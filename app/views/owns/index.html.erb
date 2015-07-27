@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Owns</h1>
+<h1>Lista de cámaras propias</h1>
+<br> 
+  <%= link_to 'Agregar cámara', new_own_path, class: "btn btn-info btn-sm" %>
+  <%= render "layouts/inicio" %>
+<hr>
 
 <%= form_tag import_owns_path, multipart: true do %>
 <div class="form-group">
@@ -20,38 +22,67 @@
 
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Spot</th>
-      <th>Orientation</th>
-      <th>Address</th>
-      <th>Location</th>
-      <th>Cosec</th>
-      <th>Polygon</th>
-      <th>Condition</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render "layouts/buscar" %>
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @owns.each do |own| %>
-      <tr>
-        <td><%= own.spot %></td>
-        <td><%= own.orientation %></td>
-        <td><%= own.address %></td>
-        <td><%= own.location %></td>
-        <td><%= own.cossec %></td>
-        <td><%= own.polygon %></td>
-        <td><%= own.condition %></td>
-        <td><%= link_to 'Show', own %></td>
-        <td><%= link_to 'Edit', edit_own_path(own) %></td>
-        <td><%= link_to 'Destroy', own, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody class="searchable">
+        <% @owns.each do |own| %>
+          <tr>
+            <td><%= own.polygon ? poligono : no_poligono %></td>
+            <td><%= own.spot %></td>
+            <td><%= own.orientation %></td>
+            <td><%= own.address %></td>
+            <td><%= own.location %></td>
+            <td><%= own.cosec %></td>            
+            <td class="text-center">
+              <% if own.condition? %>
+                  <div class="col-sm-1">
+                      <div class="round round-sm green">
+                          <%= bueno %>
+                      </div>
+                  </div>
+              <% else %>
+                  <div class="col-sm-1">
+                      <div class="round round-sm red">
+                          <%= malo %>
+                      </div>
+                  </div>        
+              <% end %>
+            </td>
+            <td><%= link_to own do %>
+                  <i class="fa fa-search"></i>
+                <% end %>
+            </td>
+            <td><%= link_to edit_own_path(own) do %>
+                  <i class="fa fa-pencil"></i>
+                <% end %>
+            </td>
+            <td><%= link_to own, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                  <i class="fa fa-trash"></i>
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Own', new_own_path %>
+<%= link_to 'Agregar cámara', new_own_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>

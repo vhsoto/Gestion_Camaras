@@ -1,12 +1,28 @@
 <tr>
+    <td><%= school.polygon ? poligono : no_poligono %></td>
     <td><%= school.spot %></td>
     <td><%= school.orientation %></td>
     <td><%= school.address %></td>
     <td><%= school.location %></td>
     <td><%= school.cosec %></td>
-    <td><%= school.polygon %></td>
-    <td><%= school.condition %></td>
-    <td><%= link_to 'Show', school %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="text-center">
+        <% if school.condition? %>
+            <div class="col-sm-1">
+                <div class="round round-sm green">
+                    <%= bueno %>
+                </div>
+            </div>
+        <% else %>
+            <div class="col-sm-1">
+                <div class="round round-sm red">
+                    <%= malo %>
+                </div>
+            </div>        
+        <% end %>
+    </td>        
+    <td>
+        <%= link_to school do %>
+            <i class="fa fa-search"></i>
+        <% end %>
+    </td>    
 </tr>

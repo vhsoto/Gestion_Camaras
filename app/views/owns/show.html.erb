@@ -1,39 +1,74 @@
-<p id="notice"><%= notice %></p>
+<br>
+<%= link_to 'Atrás', owns_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>
+<br>
+<hr>
+<div class="table-responsive"> 
+  <table class="table">
+    <thead>
+      <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+    </thead>
 
-<p>
-  <strong>Spot:</strong>
-  <%= @own.spot %>
-</p>
+    <tbody>
+      <tr>
+        <td><%= @own.polygon ? poligono : no_poligono %></td>
+        <td><%= @own.spot %></td>
+        <td><%= @own.orientation %></td>
+        <td><%= @own.address %></td>
+        <td><%= @own.location %></td>
+        <td><%= @own.cosec %></td>
+        <td class="text-center">
+          <% if @own.condition? %>
+              <div class="col-sm-1">
+                  <div class="round round-sm green">
+                      <%= bueno %>
+                  </div>
+              </div>
+          <% else %>
+              <div class="col-sm-1">
+                  <div class="round round-sm red">
+                      <%= malo %>
+                  </div>
+              </div>        
+          <% end %>
+        </td>
+        <td><%= link_to edit_own_path(@own) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
+<br>
+<%= link_to 'Agregar novedad', new_own_event_path(@own), class: "btn btn-sm btn-info" %>
+<br><br>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Novedad MEBOG</th>
+        <th>Novedad FVS</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<p>
-  <strong>Orientation:</strong>
-  <%= @own.orientation %>
-</p>
+    <tbody>
+      <%= render @own.events %>
+    </tbody>
+  </table>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @own.address %>
-</p>
-
-<p>
-  <strong>Strangeness fvs:</strong>
-  <%= @own.location %>
-</p>
-
-<p>
-  <strong>Strangeness mebog:</strong>
-  <%= @own.cosec %>
-</p>
-
-<p>
-  <strong>Polygon:</strong>
-  <%= @own.polygon %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @own.condition %>
-</p>
-
-<%= link_to 'Edit', edit_own_path(@own) %> |
-<%= link_to 'Back', owns_path %>
+<hr>
+<%= link_to 'Atrás', owns_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>

@@ -1,6 +1,6 @@
 class HumanConnection < ActiveRecord::Base
     
-    has_many :news, as: :newable, class_name: "New", dependent: :destroy
+    has_many :events, as: :eventable, dependent: :destroy
     
     def self.import(file)
         CSV.foreach(file.path, headers: true) do |row|

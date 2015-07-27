@@ -16,7 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.4'
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -53,3 +55,12 @@ gem "font-awesome-rails"
 #gem 'font-awesome-sass', '~> 4.2.0'
 
 gem 'htmlentities', '~> 4.3.3'
+
+gem 'haml', '~> 4.0.5'
+
+#gem for checkbox
+gem 'bootstrap-switch-rails', '~> 3.0.0'
+
+#selector de fechas
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'

@@ -1,12 +1,28 @@
 <tr>
+    <td><%= own.polygon ? poligono : no_poligono %></td>
     <td><%= own.spot %></td>
     <td><%= own.orientation %></td>
     <td><%= own.address %></td>
     <td><%= own.location %></td>
     <td><%= own.cosec %></td>
-    <td><%= own.polygon %></td>
-    <td><%= own.condition %></td>
-    <td><%= link_to 'Show', own %></td>
-    <td><%= link_to 'Edit', edit_own_path(own) %></td>
-    <td><%= link_to 'Destroy', own, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="text-center">
+        <% if own.condition? %>
+            <div class="col-sm-1">
+                <div class="round round-sm green">
+                    <%= bueno %>
+                </div>
+            </div>
+        <% else %>
+            <div class="col-sm-1">
+                <div class="round round-sm red">
+                    <%= malo %>
+                </div>
+            </div>        
+        <% end %>
+    </td>        
+    <td>
+        <%= link_to own do %>
+            <i class="fa fa-search"></i>
+        <% end %>
+    </td>    
 </tr>

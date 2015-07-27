@@ -1,0 +1,17 @@
+<div class="alert 
+    <%= 
+    case type.to_sym 
+    when :alert, :danger, :error, :validation_errors
+        'notice notice-danger'
+    when :warning, :todo
+        'notice notice-warning'
+    when :notice, :success
+        'notice notice-success'
+    else 
+        'notice notice-info'
+    end
+    %>
+     alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+    <%= content %>
+</div>

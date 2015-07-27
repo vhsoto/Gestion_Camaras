@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Transmilenios</h1>
+<h1>Lista de cámaras de colegios</h1>
+<br> 
+  <%= link_to 'Agregar cámara', new_transmilenio_path, class: "btn btn-info btn-sm" %>
+  <%= render "layouts/inicio" %>
+<hr>
 
 <%= form_tag import_transmilenios_path, multipart: true do %>
 <div class="form-group">
@@ -20,38 +22,67 @@
 
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Spot</th>
-      <th>Orientation</th>
-      <th>Address</th>
-      <th>Location</th>
-      <th>Cosec</th>
-      <th>Polygon</th>
-      <th>Condition</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render "layouts/buscar" %>
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @transmilenios.each do |transmilenio| %>
-      <tr>
-        <td><%= transmilenio.spot %></td>
-        <td><%= transmilenio.orientation %></td>
-        <td><%= transmilenio.address %></td>
-        <td><%= transmilenio.location %></td>
-        <td><%= transmilenio.cosec %></td>
-        <td><%= transmilenio.polygon %></td>
-        <td><%= transmilenio.condition %></td>
-        <td><%= link_to 'Show', transmilenio %></td>
-        <td><%= link_to 'Edit', edit_transmilenio_path(transmilenio) %></td>
-        <td><%= link_to 'Destroy', transmilenio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody class="searchable">
+        <% @transmilenios.each do |transmilenio| %>
+          <tr>
+            <td><%= transmilenio.polygon ? poligono : no_poligono %></td>
+            <td><%= transmilenio.spot %></td>
+            <td><%= transmilenio.orientation %></td>
+            <td><%= transmilenio.address %></td>
+            <td><%= transmilenio.location %></td>
+            <td><%= transmilenio.cosec %></td>            
+            <td class="text-center">
+              <% if transmilenio.condition? %>
+                  <div class="col-sm-1">
+                      <div class="round round-sm green">
+                          <%= bueno %>
+                      </div>
+                  </div>
+              <% else %>
+                  <div class="col-sm-1">
+                      <div class="round round-sm red">
+                          <%= malo %>
+                      </div>
+                  </div>        
+              <% end %>
+            </td>
+            <td><%= link_to transmilenio do %>
+                  <i class="fa fa-search"></i>
+                <% end %>
+            </td>
+            <td><%= link_to edit_transmilenio_path(transmilenio) do %>
+                  <i class="fa fa-pencil"></i>
+                <% end %>
+            </td>
+            <td><%= link_to transmilenio, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                  <i class="fa fa-trash"></i>
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Transmilenio', new_transmilenio_path %>
+<%= link_to 'Agregar cámara', new_transmilenio_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>

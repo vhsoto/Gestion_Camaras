@@ -1,38 +1,37 @@
 Rails.application.routes.draw do
   
-
   post 'total_camera/import' => 'total_camera#import'
   root 'total_camera#index'
 
-  resources :news
+  resources :events
 
   resources :unit_temporals do
-    resources :news
+    resources :events
     collection { post :import }
   end
 
   resources :transmilenios do
-    resources :news
+    resources :events
     collection { post :import }
   end
 
   resources :human_connections do
-    resources :news
+    resources :events
     collection { post :import }
   end
 
   resources :owns do
-    resources :news
+    resources :events
     collection { post :import }
   end
 
   resources :leaseds do
-    resources :news
+    resources :events
     collection { post :import }
   end
 
   resources :schools do
-    resources :news
+    resources :events
     collection { post :import }
   end
 

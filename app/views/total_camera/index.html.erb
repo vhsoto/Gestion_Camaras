@@ -1,58 +1,62 @@
-<p id="notice"><%= notice %></p>
 <h1>Listado completo de cámaras</h1>
 <p>Aquí se encuentran listadas todas las cámaras de los proyectos: <br>
 	<strong>Conexión Humana, Arrendadas, Propias, Colegios, Transmilenio y UTE</strong>
 </p>
-<hr>
-<div class="row text-center">
-  <%= link_to "CONEXIÓN HUMANA(1500)", human_connections_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "PROPIAS(221)", owns_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "ARRENDADAS(200)", leaseds_path, class: "btn btn-lg btn-primary" %>  
-  <%= link_to "UTE - 175(2K)", unit_temporals_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "COLEGIOS", schools_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "TRANSMILENIO", transmilenios_path, class: "btn btn-lg btn-primary" %>
-</div>
-<hr>
-<%= form_tag total_camera_import_path, multipart: true do %>
+<%= form_tag(total_camera_import_path, multipart: true) do %>
 <div class="form-group">
   <div class="row">
     <div class="col-md-3 col-lg-3">
-      <%= file_field_tag :file, required: true, class: "btn btn-sm btn-primary" %>
+      <%= file_field_tag :file, required: true, class: "btn btn-sm btn-info" %>
       <p class="help-block"><strong>Nota: El archivo debe ser .csv</strong></p>
     </div>
     <div>
-      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>  
+      <%= button_tag(type: 'submit', class: "btn btn-info") do %>  
         <i class="fa fa-arrow-circle-up"></i>
       <% end %>
     </div>
   </div>
-</div>  
-
-<% end %>
-<div class="table-responsive">
-	<table class="table">
-  <thead>
-    <tr>
-      <th>Polígono</th>
-      <th>Punto</th>
-      <th>Orientación</th>
-      <th>Dirección</th>
-      <th>Location</th>
-      <th>Cosec</th>      
-      <th>Condición</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>    
-		<%= render @human_connections %>
-		<%= render @leaseds %>
-		<%= render @owns %>
-		<%= render @schools %>
-		<%= render @transmilenios %>
-		<%= render @unit_temporals %>
-	</tbody>
-</table>
 </div>
+<% end %>
+<hr>
+<div class="row text-center">
+  <%= link_to "CONEXIÓN HUMANA(1500)", human_connections_path, class: "btn btn-lg btn-info" %>
+  <%= link_to "PROPIAS(221)", owns_path, class: "btn btn-lg btn-info" %>
+  <%= link_to "ARRENDADAS(200)", leaseds_path, class: "btn btn-lg btn-info" %>  
+  <%= link_to "UTE - 175(2K)", unit_temporals_path, class: "btn btn-lg btn-info" %>
+  <%= link_to "COLEGIOS", schools_path, class: "btn btn-lg btn-info" %>
+  <%= link_to "TRANSMILENIO", transmilenios_path, class: "btn btn-lg btn-info" %>
+</div>
+<hr>
 
 
+<%= render "layouts/buscar" %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="table-responsive">
+    	<table class="table">
+      <thead>
+        <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody class="searchable">    
+    		<%= render @human_connections %>
+    		<%= render @leaseds %>
+    		<%= render @owns %>
+    		<%= render @schools %>
+    		<%= render @transmilenios %>
+    		<%= render @unit_temporals %>
+    	</tbody>
+    </table>
+    </div>
+  </div>
+ </div> 
+<hr>

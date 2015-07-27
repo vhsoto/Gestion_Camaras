@@ -1,10 +1,10 @@
 module ApplicationHelper
 	def poligono
-		content_tag(:span, "SI", class: "label label-success")
+		fa_icon "flag"
 	end
 
 	def no_poligono
-		content_tag(:span, "NO", class: "label label-default")
+		fa_icon "minus"
 	end
 
 	def bueno
@@ -14,4 +14,10 @@ module ApplicationHelper
 	def malo
 		fa_icon "minus"
 	end
+
+	def fecha(f)
+    f.strftime("%d-%m-%Y")
+  end
 end
+
+

@@ -1,39 +1,73 @@
-<p id="notice"><%= notice %></p>
+<br>
+<%= link_to 'Atrás', leaseds_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>
+<br>
+<hr>
+<div class="table-responsive"> 
+  <table class="table">
+    <thead>
+      <tr>
+          <th>Polígono</th>
+          <th>Punto</th>
+          <th>Orientación</th>
+          <th>Dirección</th>
+          <th>Localidad</th>
+          <th>Cosec</th>      
+          <th>Condición</th>
+          <th colspan="3"></th>
+        </tr>
+    </thead>
 
-<p>
-  <strong>Spot:</strong>
-  <%= @leased.spot %>
-</p>
+    <tbody>
+      <tr>
+        <td><%= @leased.polygon ? poligono : no_poligono %></td>
+        <td><%= @leased.spot %></td>
+        <td><%= @leased.orientation %></td>
+        <td><%= @leased.address %></td>
+        <td><%= @leased.location %></td>
+        <td><%= @leased.cosec %></td>
+        <td class="text-center">
+          <% if @leased.condition? %>
+              <div class="col-sm-1">
+                  <div class="round round-sm green">
+                      <%= bueno %>
+                  </div>
+              </div>
+          <% else %>
+              <div class="col-sm-1">
+                  <div class="round round-sm red">
+                      <%= malo %>
+                  </div>
+              </div>        
+          <% end %>
+        </td>
+        <td><%= link_to edit_leased_path(@leased) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
+<br>
+<%= link_to 'Agregar novedad', new_leased_event_path(@leased), class: "btn btn-sm btn-info" %>
+<br><br>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Novedad MEBOG</th>
+        <th>Novedad FVS</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<p>
-  <strong>Orientation:</strong>
-  <%= @leased.orientation %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @leased.address %>
-</p>
-
-<p>
-  <strong>Strangeness fvs:</strong>
-  <%= @leased.location %>
-</p>
-
-<p>
-  <strong>Strangeness mebog:</strong>
-  <%= @leased.cosec %>
-</p>
-
-<p>
-  <strong>Polygon:</strong>
-  <%= @leased.polygon %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @leased.condition %>
-</p>
-
-<%= link_to 'Edit', edit_leased_path(@leased) %> |
-<%= link_to 'Back', leaseds_path %>
+    <tbody>
+      <%= render @leased.events %>
+    </tbody>
+  </table>
+</div>
+<hr>
+<%= link_to 'Atrás', leaseds_path, class: "btn btn-info btn-sm" %>
+<%= render "layouts/inicio" %>
