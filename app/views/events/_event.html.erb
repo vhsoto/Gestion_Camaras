@@ -1,13 +1,10 @@
 <tr>
 	<td><%= fecha event.date %></td>
-  <td><%= event.mebog %></td>
-  <td><%= event.fvs %></td>
-  <td><%= link_to edit_event_path(event) do %>
+	<td><%= event.mebog %></td>
+	<td><%= event.fvs %></td>
+	<td><%= link_to edit_camera_event_path(event.camera,event) do %>
       <i class="fa fa-pencil"></i>
     <% end %>
   </td>
-  <td><%= link_to event, method: :delete, data: { confirm: 'Are you sure?' } do %>
-      <i class="fa fa-trash"></i>
-    <% end %>
- 	</td>
 </tr>
+

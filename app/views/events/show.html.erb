@@ -1,3 +1,5 @@
+
+
 <p>
   <strong>Mebog:</strong>
   <%= @event.mebog %>
@@ -14,8 +16,9 @@
 </p>
 
 <p>
-  <strong>Eventable:</strong>
-  <%= @event.eventable %>
+  <strong>Camera:</strong>
+  <%= @event.camera %>
 </p>
 
-
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

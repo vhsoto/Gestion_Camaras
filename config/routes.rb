@@ -1,39 +1,29 @@
 Rails.application.routes.draw do
-  
-  post 'total_camera/import' => 'total_camera#import'
-  root 'total_camera#index'
 
+  
   resources :events
 
-  resources :unit_temporals do
+  root 'total_camera#index'
+
+  get 'reports/index'
+
+  resources :cameras do
     resources :events
+
     collection { post :import }
+
+    collection do
+      get 'conexion_humana'
+      get 'propia'
+      get 'arrendada'
+      get 'colegio'
+      get 'transmilenio'
+      get 'ute'
+    end
+    
   end
 
-  resources :transmilenios do
-    resources :events
-    collection { post :import }
-  end
-
-  resources :human_connections do
-    resources :events
-    collection { post :import }
-  end
-
-  resources :owns do
-    resources :events
-    collection { post :import }
-  end
-
-  resources :leaseds do
-    resources :events
-    collection { post :import }
-  end
-
-  resources :schools do
-    resources :events
-    collection { post :import }
-  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

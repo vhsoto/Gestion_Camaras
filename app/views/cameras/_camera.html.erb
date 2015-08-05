@@ -1,0 +1,32 @@
+<tr>
+    <td><%= camera.polygon ? poligono : no_poligono %></td>
+    <td><%= camera.spot %></td>
+    <td><%= camera.orientation %></td>
+    <td><%= camera.address %></td>
+    <td><%= camera.location %></td>
+    <td><%= camera.cosec %></td>    
+    <td class="text-center">
+        <% if camera.condition? %>
+            <div class="col-sm-1">
+                <div class="round round-sm green">
+                    <%= bueno %>
+                </div>
+            </div>
+        <% else %>
+            <div class="col-sm-1">
+                <div class="round round-sm red">
+                    <%= malo %>
+                </div>
+            </div>        
+        <% end %>
+    </td>        
+    <td>
+        <%= link_to camera do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+    </td>
+    <!-- <td><%# link_to 'Edit', edit_camera_path(camera) %></td>
+    <td><%# link_to 'Destroy', camera, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> 
+</tr>
+
+  

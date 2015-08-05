@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_camera
 
   # GET /events
   # GET /events.json
@@ -14,8 +15,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @eventable = encontrar
-    @event = @eventable.events.build
+    @event = @camera.events.build
   end
 
   # GET /events/1/edit
@@ -24,13 +24,12 @@ class EventsController < ApplicationController
 
   # POST /events
   # POST /events.json
-  def create
-    @eventable = encontrar
-    @event = @eventable.events.create(event_params)
+  def create   
+    @event = @camera.events.create(event_params)
 
-    respond_to do |format| 
+    respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Novedad creada con éxito!' }
+        format.html { redirect_to camera_path(@camera), notice: 'Novedad creada con éxito.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -44,8 +43,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        flash[:notice] = 'Novedad actualizada con éxito!'
-        format.html { redirect_to @event }
+        format.html { redirect_to camera_path(@camera), notice: 'Novedad actualizada con éxito.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -59,35 +57,22 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Novedad eliminada con éxito!' }
+      format.html { redirect_to events_url, notice: 'Novedad eliminada con éxito.' }
       format.json { head :no_content }
     end
   end
 
   private
-
-    def encontrar
-      if params[:human_connection_id]
-          @eventable = HumanConnection.find(params[:human_connection_id])
-      elsif params[:leased_id]
-          @eventable = Leased.find(params[:leased_id])
-      elsif params[:own_id]
-          @eventable = Own.find(params[:own_id])
-      elsif params[:school_id]
-          @eventable = School.find(params[:school_id])
-      elsif params[:transmilenio_id]
-          @eventable = Transmilenio.find(params[:transmilenio_id])
-      elsif params[:unit_temporal_id]
-          @eventable = UnitTemporal.find(params[:unit_temporal_id])
-      end
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
     end
 
+    def set_camera
+      @camera = Camera.find(params[:camera_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:mebog, :fvs, :date, :eventable_id, :eventable_type)
+      params.require(:event).permit(:mebog, :fvs, :date, :camera_id)
     end
 end

@@ -18,7 +18,7 @@ class CamerasControllerTest < ActionController::TestCase
 
   test "should create camera" do
     assert_difference('Camera.count') do
-      post :create, camera: { address: @camera.address, condition: @camera.condition, orientation: @camera.orientation, polygon: @camera.polygon, spot: @camera.spot, strangeness_fvs: @camera.strangeness_fvs, strangeness_mebog: @camera.strangeness_mebog }
+      post :create, camera: { address: @camera.address, condition: @camera.condition, cosec: @camera.cosec, lat: @camera.lat, lng: @camera.lng, location: @camera.location, orientation: @camera.orientation, polygon: @camera.polygon, project: @camera.project, spot: @camera.spot }
     end
 
     assert_redirected_to camera_path(assigns(:camera))
@@ -35,7 +35,7 @@ class CamerasControllerTest < ActionController::TestCase
   end
 
   test "should update camera" do
-    patch :update, id: @camera, camera: { address: @camera.address, condition: @camera.condition, orientation: @camera.orientation, polygon: @camera.polygon, spot: @camera.spot, strangeness_fvs: @camera.strangeness_fvs, strangeness_mebog: @camera.strangeness_mebog }
+    patch :update, id: @camera, camera: { address: @camera.address, condition: @camera.condition, cosec: @camera.cosec, lat: @camera.lat, lng: @camera.lng, location: @camera.location, orientation: @camera.orientation, polygon: @camera.polygon, project: @camera.project, spot: @camera.spot }
     assert_redirected_to camera_path(assigns(:camera))
   end
 

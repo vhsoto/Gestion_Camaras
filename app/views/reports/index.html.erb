@@ -1,0 +1,53 @@
+<h1>Reports#index</h1>
+
+<table>
+	<tbody>
+		<tr></tr>
+		<tr>
+			<td>CONEXIÓN HUMANA</td>
+			<td><%= @conexion %></td>
+		</tr>
+		<tr>
+			<td>PROPIAS</td>
+			<td><%= @propia %></td>
+		</tr>
+		<tr>
+			<td>ARRENDADAS</td>
+			<td><%= @arriendo %></td>
+		</tr>		
+		<tr>
+			<td>COLEGIOS</td>
+			<td><%= @colegio %></td>
+		</tr>
+		<tr>
+			<td>TRANSMILENIO</td>
+			<td><%= @transmi %></td>
+		</tr>
+		<tr>
+			<td>UTE</td>
+			<td><%= @ute %></td>
+		</tr>		
+	</tbody>
+</table>
+<br>
+ESTADO
+<%= @hc_bien %> <%= @hc_mal %>
+<%= @o_bien %> <%= @o_mal %>
+<%= @l_bien %> <%= @l_mal %>
+<%= @s_bien %> <%= @s_mal %>
+<%= @t_bien %> <%= @t_mal %>
+<%= @u_bien %> <%= @u_mal %>
+
+<br>
+CANTIDAD
+<%= @hc_cantidad %>
+<%= @l_cantidad %>
+<%= @o_cantidad %>
+<%= @s_cantidad %>
+<%= @u_cantidad %>
+<%= @t_cantidad %>
+<br>
+COSEC
+<% @hc_cosec.each do |conexion| %>
+<%= conexion %>
+<% end %>

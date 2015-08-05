@@ -3,13 +3,11 @@
 one:
   mebog: MyText
   fvs: MyText
-  date: 2015-07-24 19:31:56
-  eventable_id: 
-  eventable_type: Eventable
+  date: 2015-08-04
+  camera_id: 
 
 two:
   mebog: MyText
   fvs: MyText
-  date: 2015-07-24 19:31:56
-  eventable_id: 
-  eventable_type: Eventable
+  date: 2015-08-04
+  camera_id: 

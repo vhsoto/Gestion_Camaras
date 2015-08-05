@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot: MyString
+  orientation: MyString
+  address: MyString
+  polygon: false
+  condition: false
+  cosec: MyString
+  location: MyString
+  lat: 9.99
+  lng: 9.99
+  project: 1
+
+two:
+  spot: MyString
+  orientation: MyString
+  address: MyString
+  polygon: false
+  condition: false
+  cosec: MyString
+  location: MyString
+  lat: 9.99
+  lng: 9.99
+  project: 1
