@@ -1,4 +1,22 @@
-<h1>Reports#index</h1>
+<div class="row">
+	<div class="col-md-3 col-lg-3">
+		
+	</div>
+	<div class="col-md-9 col-lg-9">
+		<div class="row text-center">
+			<h1>Reportes</h1>
+		</div>
+		<div class="row">
+			<div>
+				
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+
+
 
 <table>
 	<tbody>
@@ -26,6 +44,10 @@
 		<tr>
 			<td>UTE</td>
 			<td><%= @ute %></td>
+		</tr>	
+		<tr>
+			<td>total</td>
+			<td><%= @total_pol %></td>
 		</tr>		
 	</tbody>
 </table>
@@ -46,8 +68,22 @@ CANTIDAD
 <%= @s_cantidad %>
 <%= @u_cantidad %>
 <%= @t_cantidad %>
+<%= @total_cam %>
 <br>
 COSEC
-<% @hc_cosec.each do |conexion| %>
-<%= conexion %>
-<% end %>
+<%= @hc_cosec %>
+<%= @o_cosec %>
+<%= @l_cosec %>
+<%= @s_cosec %>
+<%= @t_cosec %>
+<%= @u_cosec %>
+<%= @total_cosec %>
+<br>
+LOCALIDAD
+<%= @hc_localidad %>
+<%= @o_localidad %>
+<%= @l_localidad %>
+<%= @s_localidad %>
+<%= @t_localidad %>
+<%= @u_localidad %>
+<%= @total_loc %>

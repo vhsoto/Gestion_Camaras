@@ -1,9 +1,10 @@
 class Camera < ActiveRecord::Base
 
 	has_many :events
-	#validates :spot, uniqueness: true
-        before_save :create_keywords
-        scope :search, ->(keyword) { where('keywords LIKE ?', "%#{keyword.downcase}%") if keyword.present? }
+
+  before_save :create_keywords
+  scope :search, ->(keyword) { where('keywords LIKE ?', "%#{keyword.downcase}%") if keyword.present? }
+
 
 	def self.import(file)
 		CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
@@ -15,7 +16,7 @@ class Camera < ActiveRecord::Base
 
 	private
 	def create_keywords
-	    self.keywords = [spot,address,orientation,location].map(&:downcase).join(' ')
+	    self.keywords = [spot, address, orientation, location, cosec].map(&:downcase).join(' ')
 	end
 end
 

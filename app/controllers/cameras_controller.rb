@@ -78,28 +78,53 @@ class CamerasController < ApplicationController
     end
   end
 
+
   def conexion_humana
-    @conexiones = Camera.where(project: 1).all
+    if params[:search].blank?
+      @conexiones = Camera.where(project: 1).all
+    else
+      @conexiones = Camera.where(project: 1).search
+    end
   end
 
   def propia
-    @propias = Camera.where(project: 2).all
+    if params[:search].blank?
+      @propias = Camera.where(project: 2).all
+    else
+      @conexiones = Camera.where(project: 2).search
+    end
   end
 
   def arrendada
-    @arrendadas = Camera.where(project: 3).all
+    if params[:search].blank?
+      @arrendadas = Camera.where(project: 3).all
+    else
+      @conexiones = Camera.where(project: 3).search
+    end
   end
 
   def colegio
-    @colegios = Camera.where(project: 4).all
+    if params[:search].blank?
+      @colegios = Camera.where(project: 4).all
+    else
+      @conexiones = Camera.where(project: 4).search
+    end
   end
 
   def transmilenio
-    @transmilenios = Camera.where(project: 5).all
+    if params[:search].blank?
+      @transmilenios = Camera.where(project: 5).all
+    else
+      @conexiones = Camera.where(project: 5).search
+    end
   end
 
   def ute
-    @utes = Camera.where(project: 6).all
+    if params[:search].blank?
+      @utes = Camera.where(project: 6).all
+    else
+      @conexiones = Camera.where(project: 6).search
+    end
   end
 
   private

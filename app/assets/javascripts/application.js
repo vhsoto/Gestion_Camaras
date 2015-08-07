@@ -15,23 +15,27 @@
 //= require jquery-ui
 //= require bootstrap-switch
 //= require bootstrap-datepicker
+//= require maps
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 
-function habilitarFiltro() {
-  //Habilita el filtro de busqueda
-  $('#filter').keyup(function() {
-    var rex;
-    rex = new RegExp($(this).val(), 'i');
-    $('.searchable tr').hide();
-    $('.searchable tr').filter(function() {
-      return rex.test($(this).text());
-    }).show();
-  });
-}
 
-$(document).on('ready page:load', habilitarFiltro);
+// function habilitarFiltro() {
+//   //Habilita el filtro de busqueda
+//   $('#filter').keyup(function() {
+//     var rex;
+//     rex = new RegExp($(this).val(), 'i');
+//     $('.searchable tr').hide();
+//     $('.searchable tr').filter(function() {
+//       return rex.test($(this).text());
+//     }).show();
+//   });
+// }
+
+
+// $(document).on('ready page:load', habilitarFiltro);
+
 
 $(document).on('ready page:load', function(){
   $('input:checkbox').bootstrapSwitch();
@@ -47,6 +51,8 @@ $(document).on('ready page:load', function(){
     autoclose: true,
     toggleActive: true
   });
+
+  $('#ubicacion').click(function(){
+    $('.mapa').slideToggle('slow');
+  });
 })
-
-

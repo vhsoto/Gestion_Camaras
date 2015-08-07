@@ -65,3 +65,7 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
 
 #paginate
 gem 'kaminari'
+
+#google-maps
+#gem 'gmaps4rails'
+gem 'underscore-rails'

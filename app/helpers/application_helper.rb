@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def poligono
-		fa_icon "flag"
+		fa_icon "check"
 	end
 
 	def no_poligono
@@ -8,11 +8,11 @@ module ApplicationHelper
 	end
 
 	def bueno
-		fa_icon "check"
+		fa_icon "thumbs-up"
 	end
 
 	def malo
-		fa_icon "minus"
+		fa_icon "thumbs-down"
 	end
 
 	def fecha(f)

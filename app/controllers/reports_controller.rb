@@ -6,6 +6,7 @@ class ReportsController < ApplicationController
   	@colegio = poligono
   	@transmi = poligono
     @ute = poligono
+    @total_pol = poligono
 
     @hc_bien = estado_bien
     @l_bien = estado_bien
@@ -13,6 +14,7 @@ class ReportsController < ApplicationController
     @s_bien = estado_bien
     @u_bien = estado_bien
     @t_bien = estado_bien
+    @total_bien = estado_bien
 
     @hc_mal = estado_mal
     @l_mal = estado_mal
@@ -20,6 +22,7 @@ class ReportsController < ApplicationController
     @s_mal = estado_mal
     @u_mal = estado_mal
     @t_mal = estado_mal
+    @total_mal = estado_mal
 
     @hc_cantidad = cantidad_cam
     @l_cantidad = cantidad_cam
@@ -27,6 +30,7 @@ class ReportsController < ApplicationController
     @s_cantidad = cantidad_cam
     @u_cantidad = cantidad_cam
     @t_cantidad = cantidad_cam
+    @total_cam = cantidad_cam
 
     @hc_cosec = cosec
     @l_cosec = cosec
@@ -34,6 +38,7 @@ class ReportsController < ApplicationController
     @s_cosec = cosec
     @u_cosec = cosec
     @t_cosec = cosec
+    @total_cosec = cosec
 
     @hc_localidad = localidad
     @l_localidad = localidad
@@ -41,6 +46,7 @@ class ReportsController < ApplicationController
     @s_localidad = localidad
     @u_localidad = localidad
     @t_localidad = localidad
+    @total_loc = localidad
   end
 
 
@@ -50,7 +56,8 @@ class ReportsController < ApplicationController
   	@arriendo = Camera.where(polygon: true, project: 3).all.count	  	
   	@colegio =  Camera.where(polygon: true, project: 4).all.count   	
   	@transmi = Camera.where(polygon: true, project: 5).all.count
-    @ute = Camera.where(polygon: true, project: 6).all.count  
+    @ute = Camera.where(polygon: true, project: 6).all.count 
+    @total_pol = Camera.where(polygon: true).all.count
   end
 
   def estado_bien
@@ -60,6 +67,7 @@ class ReportsController < ApplicationController
     @s_bien = Camera.where(condition: true, project: 4).all.count
     @u_bien = Camera.where(condition: true, project: 5).all.count
     @t_bien = Camera.where(condition: true, project: 6).all.count
+    @total_bien = Camera.where(condition: true).all.count
   end
 
   def estado_mal
@@ -69,6 +77,7 @@ class ReportsController < ApplicationController
     @s_mal = Camera.where(condition: false, project: 4).all.count
     @t_mal = Camera.where(condition: false, project: 5).all.count
     @u_mal = Camera.where(condition: false, project: 6).all.count
+    @total_mal = Camera.where(condition: false).all.count
   end
 
   def cantidad_cam
@@ -78,49 +87,26 @@ class ReportsController < ApplicationController
     @s_cantidad = Camera.where(project: 4).all.count
     @t_cantidad = Camera.where(project: 5).all.count
     @u_cantidad = Camera.where(project: 6).all.count
+    @total_cam = Camera.all.count
   end
 
   def cosec
-    @hc_cosec = Camera.count(:cosec)
-    @o_cosec = Camera.group(:cosec).count
-    @l_cosec = Camera.group(:cosec).count
-    @s_cosec = Camera.group(:cosec).count
-    @t_cosec = Camera.group(:cosec).count
-    @u_cosec = Camera.group(:cosec).count
+    @hc_cosec = Camera.group(:cosec).where(project: 1).count
+    @o_cosec = Camera.group(:cosec).where(project: 2).count
+    @l_cosec = Camera.group(:cosec).where(project: 3).count
+    @s_cosec = Camera.group(:cosec).where(project: 4).count
+    @t_cosec = Camera.group(:cosec).where(project: 5).count
+    @u_cosec = Camera.group(:cosec).where(project: 6).count
+    @total_cosec = Camera.group(:cosec).count
   end
 
   def localidad
-    @hc_localidad = Camera.group(:location).count
-    @o_localidad = Camera.group(:location).count
-    @l_localidad = Camera.group(:location).count
-    @s_localidad = Camera.group(:location).count
-    @t_localidad = Camera.group(:location).count
-    @u_localidad = Camera.group(:location).count
+    @hc_localidad = Camera.group(:location).where(project: 1).count
+    @o_localidad = Camera.group(:location).where(project: 2).count
+    @l_localidad = Camera.group(:location).where(project: 3).count
+    @s_localidad = Camera.group(:location).where(project: 4).count
+    @t_localidad = Camera.group(:location).where(project: 5).count
+    @u_localidad = Camera.group(:location).where(project: 6).count
+    @total_loc = Camera.group(:location).count
   end
 end
-
-
-
-# def conexion_humana
-#     @conexiones = Camera.where(project: 1).all
-#   end
-
-#   def propia
-#     @propias = Camera.where(project: 2).all
-#   end
-
-#   def arrendada
-#     @arrendadas = Camera.where(project: 3).all
-#   end
-
-#   def colegio
-#     @colegios = Camera.where(project: 4).all
-#   end
-
-#   def transmilenio
-#     @transmilenios = Camera.where(project: 5).all
-#   end
-
-#   def ute
-#     @utes = Camera.where(project: 6).all
-#   end
