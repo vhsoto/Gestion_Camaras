@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804145134) do
+ActiveRecord::Schema.define(version: 20150807033439) do
 
   create_table "cameras", force: :cascade do |t|
     t.string   "spot"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20150804145134) do
     t.integer  "project"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "keywords"
   end
+
+  add_index "cameras", ["keywords"], name: "index_cameras_on_keywords"
 
   create_table "events", force: :cascade do |t|
     t.text     "mebog"

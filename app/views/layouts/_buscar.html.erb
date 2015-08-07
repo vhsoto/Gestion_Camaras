@@ -1,8 +1,11 @@
 <div class="row text-center">
   <div class="col-lg-4 col-lg-offset-4">
     <div class="input-group">
-      <%= text_field_tag "filter", nil, class: "form-control", placeholder: "Buscar cámaras..." %>
+      <%= form_tag cameras_path, method: 'get' do %>
+        <%= text_field_tag :search, nil, class: "form-control", placeholder: "Buscar cámaras..." %>
+      <% end %>
       <span class="input-group-btn">
+      
         <%= link_to '#', class: "btn btn-info" do  %> 
         <i class="fa fa-search"></i>
         <% end %>

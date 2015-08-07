@@ -84,8 +84,42 @@
     </div>
   </div>
 </div>
-<%= link_to 'Atrás', cameras_path, class: "btn btn-info btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
+<% if @camera.lat.present? %>
+<style>
+      #map-canvas {
+        height: 800px;
+        width: 600px;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+<div id="map-canvas"></div>
+<%= link_to 'Atrás', ruta_atras(@camera.project), class: "btn btn-info btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
   <i class="fa fa-home"></i>
 <% end %>
 <br>
 <br>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<script>
+function initialize() {
+  var myLatlng = new google.maps.LatLng(<%= @camera.lat %>, <%= @camera.lng %>);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Camara'
+  });
+}
+
+//google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(initialize);
+$(document).on('page:load', initialize);
+
+</script>
+<% end %>

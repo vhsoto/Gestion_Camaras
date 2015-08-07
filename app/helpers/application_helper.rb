@@ -36,19 +36,15 @@ module ApplicationHelper
   end
 
   def ruta_atras(r)
-    if [:project] == 1
-      r = conexion_humana_cameras_path
-    elsif ruta == 2
-      propia_cameras_path
-    elsif ruta == 3
-      arrendada_cameras_path
-    elsif ruta == 4
-      colegio_cameras_path
-    elsif ruta == 5
-      transmilenio_cameras_path
-    elsif ruta == 6
-      ute_cameras_path    
-    end
+      result = case r
+        when 1 then conexion_humana_cameras_path
+        when 2 then propia_cameras_path
+        when 3 then arrendada_cameras_path
+        when 4 then colegio_cameras_path
+        when 5 then transmilenio_cameras_path
+        when 6 then ute_cameras_path    
+      end
+      return result
   end
 end
 

@@ -4,7 +4,11 @@ class CamerasController < ApplicationController
   # GET /cameras
   # GET /cameras.json
   def index
-    @cameras = Camera.all
+    if params[:search].blank?
+      @cameras = Camera.all
+    else
+      @cameras = Camera.search(params[:search])
+    end
   end
 
   # GET /cameras/1
