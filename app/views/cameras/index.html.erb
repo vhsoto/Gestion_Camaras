@@ -1,6 +1,142 @@
+<div class="row">
+<%= link_to conexion_humana_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Conexión Humana
+        </h3>           
+        <p>
+          Cámaras público - privadas.
+          <br> (1500)
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to propia_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Propias
+        </h3>           
+        <p>
+          propias.
+          <br> <br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to arrendada_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Arrendadas
+        </h3>           
+        <p>
+          Cámaras Siemens.
+          <br> <br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to colegio_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Colegios
+        </h3>           
+        <p>
+          Cámaras colegios.
+          <br> <br>
+        </p>
+      </div>
+    </div>
+  </div>  
+  <% end %>    
+</div>
+<div class="row">  
+  <div class="col-xs-3"></div>
+  <%= link_to transmilenio_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Transmilenio
+        </h3>           
+        <p>
+          Cámaras Transmilenio
+          <br> <br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to ute_cameras_path do %>
+  <div class="col-xs-3">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          cam               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          UTE
+        </h3>           
+        <p>
+          Cámaras UTE.
+          <br> (2k -5k)
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class="col-xs-3"></div>
+</div>
+<br>
+<div class="text-center">
+  <%= link_to root_path, class: "btn btn-primary btn-lg" do %>
+    <i class="fa fa-home"></i>
+  <% end %>
+</div>
+
+<div class="collapse" id="listaAcordeon">
 <h1 class="text-center">Listado completo de cámaras</h1>
 <p class="text-center">Conexión Humana, Arrendadas, Propias, Colegios, Transmilenio y UTE</p>
+
 <hr>
+ 
 <%= form_tag(import_cameras_path, multipart: true) do %>
 <div class="form-group">
   <div class="row">
@@ -15,75 +151,72 @@
     </div>
   </div>
 </div>
-<% end %>
-
-<hr>
-<div class="row text-center">
-  <%= link_to "CONEXIÓN HUMANA(1500)", conexion_humana_cameras_path, class: "btn btn-info btn-lg" %>
-  <%= link_to "PROPIAS(221)", propia_cameras_path, class: "btn btn-info btn-lg" %>
-  <%= link_to "ARRENDADAS(200)", arrendada_cameras_path, class: "btn btn-info btn-lg" %> 
-  <%= link_to "COLEGIOS", colegio_cameras_path, class: "btn btn-info btn-lg" %> 
-  <%= link_to "TRANSMILENIO", transmilenio_cameras_path, class: "btn btn-info btn-lg" %>
-  <%= link_to "UTE - 175(2K)", ute_cameras_path, class: "btn btn-info btn-lg" %>  
-  <%= link_to root_path, class: "btn btn-primary btn-lg" do %>
-    <i class="fa fa-home"></i>
-  <% end %>
-</div>
-<hr>
+<% end %>     
+       
 
 <%= render "layouts/buscar" %>
 <div class="row">
   <div class="col-lg-12">
     <div class="table-responsive">
       <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Polígono</th>
-          <th>Proyecto</th>
-          <th>Punto</th>
-          <th>Orientación</th>
-          <th>Dirección</th>
-          <th>Localidad</th>
-          <th>Cosec</th>      
-          <th>Estado</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody class="searchable">
-        <% @cameras.each do |camera| %>
+        <thead>
           <tr>
-             <td><%= camera.polygon ? poligono : no_poligono %></td>
-            <td><%=  proyecto camera.project %></td>
-            <td><%= camera.spot %></td>
-            <td><%= camera.orientation %></td>
-            <td><%= camera.address %></td>           
-            <td><%= camera.location %></td>
-            <td><%= camera.cosec %></td>
-            <td><% if camera.condition? %>
-                  <div class="col-sm-1">
-                      <div class="round round-sm green">
-                          <%= bueno %>
-                      </div>
-                  </div>
-                <% else %>
-                  <div class="col-sm-1">
-                      <div class="round round-sm red">
-                          <%= malo %>
-                      </div>
-                  </div>        
-                <% end %>
-            </td>           
-            <td><%= link_to camera do %>
-                <i class="fa fa-search"></i>
-                <% end %>
-            </td>            
-            <td><%= link_to camera, method: :delete, data: { confirm: 'Está seguro?' }  do %>
-                <span><i class="fa fa-trash btn-danger"></i></span>
-                <% end %>
-            </td>
+            <th>Polígono</th>
+            <th>Proyecto</th>
+            <th>Punto</th>
+            <th>Orientación</th>
+            <th>Dirección</th>
+            <th>Localidad</th>
+            <th>Cosec</th>      
+            <th>Estado</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-</table>
+        </thead>
+
+        <tbody class="searchable">
+          <% @cameras.each do |camera| %>
+            <tr>
+               <td><%= camera.polygon ? poligono : no_poligono %></td>
+              <td><%=  proyecto camera.project %></td>
+              <td><%= camera.spot %></td>
+              <td><%= camera.orientation %></td>
+              <td><%= camera.address %></td>           
+              <td><%= camera.location %></td>
+              <td><%= camera.cosec %></td>
+              <td><% if camera.condition? %>
+                    <div class="col-sm-1">
+                        <div class="round round-sm green">
+                            <%= bueno %>
+                        </div>
+                    </div>
+                  <% else %>
+                    <div class="col-sm-1">
+                        <div class="round round-sm red">
+                            <%= malo %>
+                        </div>
+                    </div>        
+                  <% end %>
+              </td>           
+              <td><%= link_to camera do %>
+                  <i class="fa fa-search"></i>
+                  <% end %>
+              </td>            
+              <td><%= link_to camera, method: :delete, data: { confirm: 'Está seguro?' }  do %>
+                  <span><i class="fa fa-trash btn-danger"></i></span>
+                  <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>      
+      </table>
+    </div>
+  </div>
+</div>
 <br>
+<div class="row text-center">
+  <%= paginate @cameras, :theme => 'twitter-bootstrap-3',
+                         :pagination_class => "pagination-sm pagination-centered" %>
+</div>
+</div> 
+<br>
+<div class="text-center" type="button" data-toggle="collapse" data-target="#listaAcordeon" aria-expanded="false" aria-controls="listaAcordeon"><i class="fa fa-chevron-down"> </i></div>
