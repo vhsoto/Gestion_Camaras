@@ -50,9 +50,5 @@ $(document).on('ready page:load', function(){
     todayHighlight: true,
     autoclose: true,
     toggleActive: true
-  });
-
-  $('#ubicacion').click(function(){
-    $('.mapa').slideToggle('slow');
-  });
+  });  
 })

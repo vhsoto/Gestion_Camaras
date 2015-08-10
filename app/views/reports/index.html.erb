@@ -1,22 +1,114 @@
+<h1>Reportes
+<%= link_to root_path, class: "btn btn-primary pull-right" do %>
+  <i class="fa fa-home"></i>
+<% end %></h1>
+
 <div class="row">
-	<div class="col-md-3 col-lg-3">
-		
-	</div>
-	<div class="col-md-9 col-lg-9">
-		<div class="row text-center">
-			<h1>Reportes</h1>
-		</div>
-		<div class="row">
-			<div>
-				
-			</div>
-		</div>		
-	</div>
+	<div class="col-md-1 col-lg-1"></div>
+		<%= link_to id: "poligono" do %>
+  <div class="col-xs-3 col-md-2 col-lg-2">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          rep               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Polígono
+        </h3>           
+        <p>
+          Cantidad de cámaras
+          <br> en el polígono.
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to propia_cameras_path do %>
+  <div class="col-xs-3 col-md-2 col-lg-2">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          rep               
+        </div>
+      </div>
+      <div class="offer-content">
+      	<br>
+        <h3 class="lead">
+          Estado
+        </h3>           
+        <p>
+          Estado de las cámaras 
+          <br> bien / mal. 
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to arrendada_cameras_path do %>
+  <div class="col-xs-3 col-md-2 col-lg-2">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          rep               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Cantidad
+        </h3>           
+        <p>
+          Número total de
+          <br> cámaras por proyecto.
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %> 	
+	<%= link_to conexion_humana_cameras_path do %>
+  <div class="col-xs-3 col-md-2 col-lg-2">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          rep               
+        </div>
+      </div>
+      <div class="offer-content">
+      	<br>
+        <h3 class="lead">
+          Cosec
+        </h3>           
+        <p>
+          Cantidad de cámaras
+          <br> por cosec.
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to propia_cameras_path do %>
+  <div class="col-xs-3 col-md-2 col-lg-2">
+    <div class="offer offer-radius offer-info">
+      <div class="shape">
+        <div class="shape-text">
+          rep               
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3 class="lead">
+          Localidad
+        </h3>           
+        <p>
+          Cantidad de cámaras 
+          <br> por localidad.
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>  
+  <div class="col-md-1 col-lg-1"></div> 
 </div>
-
-
-
-
 
 <table>
 	<tbody>
@@ -69,15 +161,74 @@ CANTIDAD
 <%= @u_cantidad %>
 <%= @t_cantidad %>
 <%= @total_cam %>
-<br>
+<br><br>
 COSEC
-<%= @hc_cosec %>
-<%= @o_cosec %>
-<%= @l_cosec %>
-<%= @s_cosec %>
-<%= @t_cosec %>
-<%= @u_cosec %>
-<%= @total_cosec %>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Chapinero</th>
+			<th>Kennedy</th>
+			<th>Pte. Aranda</th>
+			<th>Ciudad Bolivar</th>
+			<th>CAD</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>CONEXIÓN HUMANA</td>
+				<% @hc_cosec.each do |conexion, v| %>
+					<td><%= v %></td>
+				<% end %>			
+		</tr>
+		<tr>
+			<td>PROPIAS</td>
+				<% @o_cosec.each do |propia,v| %>
+					<td><%= v %></td>
+				<% end %>	
+		</tr>
+		<tr>
+			<td>ARRENDADAS</td>
+			<% @l_cosec.each do |arrendada,v| %>
+				<td><%= v %></td>
+			<% end %>
+			
+		</tr>
+		<tr>
+			<td>COLEGIOS</td>
+			<% @s_cosec.each do |colegio,v| %>
+			<td><%= v %></td>
+			<% end %>
+			
+		</tr>	
+		<tr>
+			<td>TRANSMILENIO</td>
+			<% @t_cosec.each do |transmi,v| %>
+			<td><%= v %></td>
+			<% end %>
+			
+		</tr>
+		<tr>
+			<td>UTE</td>
+			<% @u_cosec.each do |ute,v| %>
+			<td><%= v %></td>
+			<% end %>
+			
+		</tr>
+		<tr>
+			<td>total</td>
+			<% @total_cosec.each do |total, v| %>
+			<td><%= total  %></td>
+			<% end %>
+			
+		</tr>			
+	</tbody>
+</table>
+
+<br><br>
+
 <br>
 LOCALIDAD
 <%= @hc_localidad %>
