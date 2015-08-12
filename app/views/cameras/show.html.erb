@@ -89,8 +89,7 @@
   <center>
     <div class="mapa">
       <div id="map-canvas"></div>
-    </div>
-    
+    </div>    
   </center>
 <% end %>
 <br>
@@ -121,8 +120,8 @@
   $('#ubicacion').click(function(){
     $('.mapa').slideToggle('slow');
   });
-
-  $(document).ready(initialize);
+  
   $(document).on('page:load', initialize);
+  $(document).ready(initialize);
 </script>
 

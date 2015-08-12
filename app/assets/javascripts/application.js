@@ -15,33 +15,16 @@
 //= require jquery-ui
 //= require bootstrap-switch
 //= require bootstrap-datepicker
-//= require maps
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
-
-
-// function habilitarFiltro() {
-//   //Habilita el filtro de busqueda
-//   $('#filter').keyup(function() {
-//     var rex;
-//     rex = new RegExp($(this).val(), 'i');
-//     $('.searchable tr').hide();
-//     $('.searchable tr').filter(function() {
-//       return rex.test($(this).text());
-//     }).show();
-//   });
-// }
-
-
-// $(document).on('ready page:load', habilitarFiltro);
 
 
 $(document).on('ready page:load', function(){
   $('input:checkbox').bootstrapSwitch();
 
   setTimeout(function(){    
-    $('.alert').fadeToggle(1700);
+    $('.alert').fadeToggle(1800);
   });
 
   $('.datepicker').datepicker({
@@ -51,4 +34,24 @@ $(document).on('ready page:load', function(){
     autoclose: true,
     toggleActive: true
   });  
+
+  $('#poligonoLink').click(function(){    
+    $( "#poligono" ).fadeToggle('slow');
+  });
+
+  $('#estadoLink').click(function(){    
+    $( "#estado" ).fadeToggle('slow');
+  });
+
+  $('#cantidadLink').click(function(){    
+    $( "#cantidad" ).fadeToggle('slow');
+  });
+
+  $('#cosecLink').click(function(){    
+    $( "#cosec" ).fadeToggle('slow');
+  });
+
+  $('#localidadLink').click(function(){    
+    $( "#localidad" ).fadeToggle('slow');
+  });
 })

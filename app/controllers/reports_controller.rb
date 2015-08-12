@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   def index
+    @ceros = {hc_cosec: '0', l_cosec: '0', o_cosec: '0', s_cosec: '0', t_cosec: '0', total_cosec: '0'}
   	@conexion = poligono
   	@arriendo = poligono
   	@propia = poligono
@@ -31,6 +32,7 @@ class ReportsController < ApplicationController
     @u_cantidad = cantidad_cam
     @t_cantidad = cantidad_cam
     @total_cam = cantidad_cam
+
 
     @hc_cosec = cosec
     @l_cosec = cosec
