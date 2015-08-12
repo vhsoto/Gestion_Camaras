@@ -13,8 +13,7 @@ class Camera < ActiveRecord::Base
 			camera_hash = row.to_hash		  
 		  Camera.create!(camera_hash) unless Camera.exists?(spot: camera_hash[:spot], address: camera_hash[:address])
 		end
-	end
-	
+	end	
 
 	private
 	def create_keywords

@@ -1,7 +1,6 @@
 class ReportsController < ApplicationController
   def index
-    @ceros = {hc_cosec: '0', l_cosec: '0', o_cosec: '0', s_cosec: '0', t_cosec: '0', total_cosec: '0'}
-  	@conexion = poligono
+    @conexion = poligono
   	@arriendo = poligono
   	@propia = poligono
   	@colegio = poligono

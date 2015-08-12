@@ -278,46 +278,46 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>CONEXIÓN HUMANA</td>
-								<% @hc_cosec.each do |conexion, v| %>
-									<td><%= v %></td>
+							<td>CONEXIÓN HUMANA</td>							
+								<% @hc_cosec.each do |conexion, v| %>									
+								<td><%= v %></td>											
 								<% end %>			
 						</tr>
 						<tr>
 							<td>PROPIAS</td>
 								<% @o_cosec.each do |propia,v| %>
-									<td><%= v %></td>
+									<td><%= propia %></td>
 								<% end %>	
 						</tr>
 						<tr>
 							<td>ARRENDADAS</td>
 							<% @l_cosec.each do |arrendada,v| %>
-								<td><%= v %></td>
+								<td><%= arrendada %></td>
 							<% end %>					
 						</tr>
 						<tr>
 							<td>COLEGIOS</td>
 							<% @s_cosec.each do |colegio,v| %>
-							<td><%= v %></td>
+							<td><%= colegio %></td>
 							<% end %>					
 						</tr>	
 						<tr>
 							<td>TRANSMILENIO</td>
 							<% @t_cosec.each do |transmi,v| %>
-							<td><%= v %></td>
+							<td><%= transmi %></td>
 							<% end %>					
 						</tr>
 						<tr>
 							<td>UTE</td>
 							<% @u_cosec.each do |ute,v| %>
-							<td><%= v %></td>
+							<td><%= ute %></td>
 							<% end %>					
 						</tr>
 						<tr>
 							<td>total</td>
 							<% @total_cosec.each do |total, v| %>
-							<td><%= total  %></td>
-							<% end %>					
+							<td><%= v  %></td>
+							<% end %>											
 						</tr>			
 					</tbody>
 				</table>
