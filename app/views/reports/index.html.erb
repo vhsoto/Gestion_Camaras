@@ -100,312 +100,318 @@
         </p>
       </div>
     </div>
-  </div>
- 
+  </div> 
   <div class="col-md-1 col-lg-1"></div> 
 </div>
 
 <hr>
 <!-- div poligono -->
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-xs-3 col-sm-3 col-md-3-col-lg-3 text-center">
+		<div class="table" id="poligono" style="display: none;">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Cámaras del polígono</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table">
+						<thead>
+							<tr>
+								<th><strong>Proyecto</strong></th>
+								<th><strong>Cantidad</strong></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+								<td><%= @conexion %></td>
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+								<td><%= @propia %></td>
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<td><%= @arriendo %></td>
+							</tr>		
+							<tr>
+								<td>COLEGIOS</td>
+								<td><%= @colegio %></td>
+							</tr>
+							<tr>
+								<td>TRANSMILENIO</td>
+								<td><%= @transmi %></td>
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<td><%= @ute %></td>
+							</tr>	
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><%= @total_pol %></td>
+							</tr>		
+						</tbody>
+					</table>
+		  	</div>
+			</div>		
+		</div>
+	<!-- div estado -->
+		<div class="table" id="estado" style="display: none;">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Estado de las cámaras</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table">
+						<thead>
+							<tr>
+								<td><strong>Proyecto</strong></td>
+								<td><strong><i class="fa fa-thumbs-up"></i></strong></td>
+								<td><strong><i class="fa fa-thumbs-down"></i></strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+								<td><%= @hc_bien %></td>
+								<td><%= @hc_mal %></td>
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+								<td><%= @o_bien %></td>
+								<td><%= @o_mal %></td>
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<td><%= @l_bien %></td>
+								<td><%= @l_mal %></td>
+							</tr>		
+							<tr>
+								<td>COLEGIOS</td>
+								<td><%= @s_bien %></td>
+								<td><%= @s_mal %></td>
+							</tr>
+							<tr>
+								<td>TRANSMILENIO</td>
+								<td><%= @t_bien %></td>
+								<td><%= @t_mal %></td>
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<td><%= @u_bien %></td>
+								<td><%= @u_mal %></td>
+							</tr>	
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><%= @total_bien %></td>
+								<td><%= @total_mal %></td>
+							</tr>		
+						</tbody>
+					</table>
+			  </div>
+			</div>		
+		</div>
+	<!--div cantidad -->
+		<div class="table" id="cantidad" style="display: none;">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Cantidad de cámaras</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table">
+						<thead>
+							<tr>
+								<td><strong>Proyecto</strong></td>
+								<td><strong>Cantidad</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+								<td><%= @hc_cantidad %></td>
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+								<td><%= @o_cantidad %></td>
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<td><%= @l_cantidad %></td>
+							</tr>		
+							<tr>
+								<td>COLEGIOS</td>
+								<td><%= @s_cantidad %></td>
+							</tr>
+							<tr>
+								<td>TRANSMILENIO</td>
+								<td><%= @t_cantidad %></td>
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<td><%= @u_cantidad %></td>
+							</tr>	
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><%= @total_cam %></td>
+							</tr>		
+						</tbody>
+					</table>
+			  </div>
+			</div>	
+		</div>
+	</div>
+</div>
 
-<div class=" col-md-3-col-lg-3">
-	<div class="table" id="poligono" style="display: none;">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Cámaras del polígono</h3>
-		  </div>
-		  <div class="panel-body">
-		    <table class="table">
-					<thead>
-						<tr>
-							<td><strong>Proyecto</strong></td>
-							<td><strong>Cantidad</strong></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>CONEXIÓN HUMANA</td>
-							<td><%= @conexion %></td>
-						</tr>
-						<tr>
-							<td>PROPIAS</td>
-							<td><%= @propia %></td>
-						</tr>
-						<tr>
-							<td>ARRENDADAS</td>
-							<td><%= @arriendo %></td>
-						</tr>		
-						<tr>
-							<td>COLEGIOS</td>
-							<td><%= @colegio %></td>
-						</tr>
-						<tr>
-							<td>TRANSMILENIO</td>
-							<td><%= @transmi %></td>
-						</tr>
-						<tr>
-							<td>UTE</td>
-							<td><%= @ute %></td>
-						</tr>	
-						<tr>
-							<td><strong>Total</strong></td>
-							<td><%= @total_pol %></td>
-						</tr>		
-					</tbody>
-				</table>
-	  	</div>
-		</div>		
-	</div>
-<!-- div estado -->
-	<div class="table" id="estado" style="display: none;">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Estado de las cámaras</h3>
-		  </div>
-		  <div class="panel-body">
-		    <table class="table">
-					<thead>
-						<tr>
-							<td><strong>Proyecto</strong></td>
-							<td><strong><i class="fa fa-thumbs-up"></i></strong></td>
-							<td><strong><i class="fa fa-thumbs-down"></i></strong></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>CONEXIÓN HUMANA</td>
-							<td><%= @hc_bien %></td>
-							<td><%= @hc_mal %></td>
-						</tr>
-						<tr>
-							<td>PROPIAS</td>
-							<td><%= @o_bien %></td>
-							<td><%= @o_mal %></td>
-						</tr>
-						<tr>
-							<td>ARRENDADAS</td>
-							<td><%= @l_bien %></td>
-							<td><%= @l_mal %></td>
-						</tr>		
-						<tr>
-							<td>COLEGIOS</td>
-							<td><%= @s_bien %></td>
-							<td><%= @s_mal %></td>
-						</tr>
-						<tr>
-							<td>TRANSMILENIO</td>
-							<td><%= @t_bien %></td>
-							<td><%= @t_mal %></td>
-						</tr>
-						<tr>
-							<td>UTE</td>
-							<td><%= @u_bien %></td>
-							<td><%= @u_mal %></td>
-						</tr>	
-						<tr>
-							<td><strong>Total</strong></td>
-							<td><%= @total_bien %></td>
-							<td><%= @total_mal %></td>
-						</tr>		
-					</tbody>
-				</table>
-		  </div>
-		</div>		
-	</div>
-<!--div cantidad -->
-	<div class="table" id="cantidad" style="display: none;">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Cantidad de cámaras</h3>
-		  </div>
-		  <div class="panel-body">
-		    <table class="table">
-					<thead>
-						<tr>
-							<td><strong>Proyecto</strong></td>
-							<td><strong>Cantidad</strong></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>CONEXIÓN HUMANA</td>
-							<td><%= @hc_cantidad %></td>
-						</tr>
-						<tr>
-							<td>PROPIAS</td>
-							<td><%= @o_cantidad %></td>
-						</tr>
-						<tr>
-							<td>ARRENDADAS</td>
-							<td><%= @l_cantidad %></td>
-						</tr>		
-						<tr>
-							<td>COLEGIOS</td>
-							<td><%= @s_cantidad %></td>
-						</tr>
-						<tr>
-							<td>TRANSMILENIO</td>
-							<td><%= @t_cantidad %></td>
-						</tr>
-						<tr>
-							<td>UTE</td>
-							<td><%= @u_cantidad %></td>
-						</tr>	
-						<tr>
-							<td><strong>Total</strong></td>
-							<td><%= @total_cam %></td>
-						</tr>		
-					</tbody>
-				</table>
-		  </div>
-		</div>	
-	</div>
-<!--div cosec -->
-	<div class="table" id="cosec" style="display: none;">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Cámaras por cosec</h3>
-		  </div>
-		  <div class="panel-body">
-		    <table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>					
-							<% @total_cosec.each do |total, v| %>
-							<th><%= total  %></th>
-							<% end %>					
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>CONEXIÓN HUMANA</td>							
-								<% @hc_cosec.each do |conexion, v| %>									
-								<td><%= v %></td>											
-								<% end %>			
-						</tr>
-						<tr>
-							<td>PROPIAS</td>
-								<% @o_cosec.each do |propia,v| %>
-									<td><%= propia %></td>
-								<% end %>	
-						</tr>
-						<tr>
-							<td>ARRENDADAS</td>
-							<% @l_cosec.each do |arrendada,v| %>
-								<td><%= arrendada %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>COLEGIOS</td>
-							<% @s_cosec.each do |colegio,v| %>
-							<td><%= colegio %></td>
-							<% end %>					
-						</tr>	
-						<tr>
-							<td>TRANSMILENIO</td>
-							<% @t_cosec.each do |transmi,v| %>
-							<td><%= transmi %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>UTE</td>
-							<% @u_cosec.each do |ute,v| %>
-							<td><%= ute %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>total</td>
-							<% @total_cosec.each do |total, v| %>
-							<td><%= v  %></td>
-							<% end %>											
-						</tr>			
-					</tbody>
-				</table>
-		  </div>
-		</div>	
-	</div>
-<!-- div localidad -->
-	<div class="table" id="localidad" style="display: none;">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Cámaras por localidad</h3>
-		  </div>
-		  <div class="panel-body">
-		    <table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>					
-								<% @total_loc.each do |total, v| %>
-									<th><%= total %></th>
-								<% end %>			
-							<!-- <th>Antonio Nariño</th>
-							<th>Barrios Unidos</th>
-							<th>Bosa</th>
-							<th>Chapinero</th>
-							<th>Ciudad Bolivar</th>
-							<th>Engativá</th>
-							<th>Fontibón</th>
-							<th>Kennedy</th>
-							<th>La Candelaria</th>
-							<th>Los Mártires</th>
-							<th>Pte. Aranda</th>
-							<th>Rafael Uribe Uribe</th>
-							<th>San Cristóbal</th>
-							<th>Santa Fe</th>
-							<th>Suba</th>
-							<th>Sumapaz</th>
-							<th>Teusaquillo</th>
-							<th>Tunjuelito</th>
-							<th>Usaquén</th>
-							<th>Usme</th> -->
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>CONEXIÓN HUMANA</td>
-								<% @hc_localidad.each do |conexion, v| %>
-									<td><%=  v %></td>
-								<% end %>			
-						</tr>
-						<tr>
-							<td>PROPIAS</td>
-								<% @o_localidad.each do |propia,v| %>
+	<!--div cosec -->
+<div class="row">
+	<div class="col-md-9-col-lg-9">
+		<div class="table" id="cosec" style="display: none;">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Cámaras por cosec</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>					
+								<% @total_cosec.each do |total, v| %>
+								<th><%= total  %></th>
+								<% end %>					
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>							
+									<% @hc_cosec.each do |conexion, v| %>									
+									<td><%= v %></td>											
+									<% end %>			
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+									<% @o_cosec.each do |propia,v| %>
+										<td><%= propia %></td>
+									<% end %>	
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<% @l_cosec.each do |arrendada,v| %>
+									<td><%= arrendada %></td>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>COLEGIOS</td>
+								<% @s_cosec.each do |colegio,v| %>
+								<td><%= colegio %></td>
+								<% end %>					
+							</tr>	
+							<tr>
+								<td>TRANSMILENIO</td>
+								<% @t_cosec.each do |transmi,v| %>
+								<td><%= transmi %></td>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<% @u_cosec.each do |ute,v| %>
+								<td><%= ute %></td>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>total</td>
+								<% @total_cosec.each do |total, v| %>
+								<td><%= v  %></td>
+								<% end %>											
+							</tr>			
+						</tbody>
+					</table>
+			  </div>
+			</div>	
+		</div>
+	<!-- div localidad -->
+		<div class="table" id="localidad" style="display: none;">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Cámaras por localidad</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>					
+									<% @total_loc.each do |total, v| %>
+										<th><%= total %></th>
+									<% end %>			
+								<!-- <th>Antonio Nariño</th>
+								<th>Barrios Unidos</th>
+								<th>Bosa</th>
+								<th>Chapinero</th>
+								<th>Ciudad Bolivar</th>
+								<th>Engativá</th>
+								<th>Fontibón</th>
+								<th>Kennedy</th>
+								<th>La Candelaria</th>
+								<th>Los Mártires</th>
+								<th>Pte. Aranda</th>
+								<th>Rafael Uribe Uribe</th>
+								<th>San Cristóbal</th>
+								<th>Santa Fe</th>
+								<th>Suba</th>
+								<th>Sumapaz</th>
+								<th>Teusaquillo</th>
+								<th>Tunjuelito</th>
+								<th>Usaquén</th>
+								<th>Usme</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+									<% @hc_localidad.each do |conexion, v| %>
+										<td><%=  v %></td>
+									<% end %>			
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+									<% @o_localidad.each do |propia,v| %>
+										<td><%= v %></td>
+									<% end %>	
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<% @l_localidad.each do |arrendada,v| %>
 									<td><%= v %></td>
-								<% end %>	
-						</tr>
-						<tr>
-							<td>ARRENDADAS</td>
-							<% @l_localidad.each do |arrendada,v| %>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>COLEGIOS</td>
+								<% @s_localidad.each do |colegio,v| %>
 								<td><%= v %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>COLEGIOS</td>
-							<% @s_localidad.each do |colegio,v| %>
-							<td><%= v %></td>
-							<% end %>					
-						</tr>	
-						<tr>
-							<td>TRANSMILENIO</td>
-							<% @t_localidad.each do |transmi,v| %>
-							<td><%= v %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>UTE</td>
-							<% @u_localidad.each do |ute,v| %>
-							<td><%= v %></td>
-							<% end %>					
-						</tr>
-						<tr>
-							<td>total</td>
-							<% @total_loc.each do |total, v| %>
-							<td><%= v %></td>
-							<% end %>					
-						</tr>			
-					</tbody>
-				</table>
-		  </div>
-		</div>		
+								<% end %>					
+							</tr>	
+							<tr>
+								<td>TRANSMILENIO</td>
+								<% @t_localidad.each do |transmi,v| %>
+								<td><%= v %></td>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<% @u_localidad.each do |ute,v| %>
+								<td><%= v %></td>
+								<% end %>					
+							</tr>
+							<tr>
+								<td>total</td>
+								<% @total_loc.each do |total, v| %>
+								<td><%= v %></td>
+								<% end %>					
+							</tr>			
+						</tbody>
+					</table>
+			  </div>
+			</div>		
+		</div>
 	</div>
 </div>
