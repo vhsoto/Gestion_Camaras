@@ -70,3 +70,4 @@ gem 'bootstrap-kaminari-views'
 #google-maps
 #gem 'gmaps4rails'
 gem 'underscore-rails'
+

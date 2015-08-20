@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   
+  
   resources :events
 
   root 'total_camera#index'
+
+  #get 'total_camera#index'
 
   get 'reports/index'
 

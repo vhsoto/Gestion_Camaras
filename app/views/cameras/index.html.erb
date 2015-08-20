@@ -129,9 +129,15 @@
   <%= link_to root_path, class: "btn btn-primary btn-lg" do %>
     <i class="fa fa-home"></i>
   <% end %>
+  <br><br>
+  <%= link_to cameras_path(@camera, anchor: "listado"), class: "anchorLink" do %>
+    <i class="fa fa-chevron-down"></i>
+  <% end %>
 </div>
 
-<div class="collapse" id="listaAcordeon" style="display: none;">
+<br><br>
+
+<div id="listado">
 <h1 class="text-center">Listado completo de cámaras</h1>
 <p class="text-center">Conexión Humana, Arrendadas, Propias, Colegios, Transmilenio y UTE</p>
 
@@ -219,4 +225,3 @@
 </div>
 </div> 
 <br>
-<div class="text-center puntos" type="button" data-toggle="collapse" data-target="#listaAcordeon" aria-expanded="false" aria-controls="listaAcordeon"><i class="fa fa-ellipsis-h"> </i></div>

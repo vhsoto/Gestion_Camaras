@@ -21,10 +21,6 @@
 
 
 $(document).on('ready page:load', function(){
-  $('.puntos').click(function(){
-    $('#listaAcordeon').slideToggle(1500);
-  });
-  
 
   $('input:checkbox').bootstrapSwitch();
 

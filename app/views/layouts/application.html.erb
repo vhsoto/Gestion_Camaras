@@ -8,7 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <% flash.each do |type, content| %>
+  <div class="navbar navbar-primary">
+    <h3>Espacio para logo, botones de gestión de cuenta de usuario</h3>
+    <% flash.each do |type, content| %>
     <% if content.respond_to?('each') 
       content.each do |item| %>
         <%= render 'layouts/alert', type: type, content: item %>
@@ -17,6 +19,8 @@
         <%= render 'layouts/alert', type: type, content: content %>
       <% end %>
     <% end %>
+  </div>
+  
      
   
 	<div class="container">
