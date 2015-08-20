@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   
   
+  get 'users/new'
+
   resources :events
 
   root 'total_camera#index'

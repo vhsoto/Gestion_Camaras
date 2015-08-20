@@ -71,3 +71,4 @@ gem 'bootstrap-kaminari-views'
 #gem 'gmaps4rails'
 gem 'underscore-rails'
 
+gem 'bcrypt'
