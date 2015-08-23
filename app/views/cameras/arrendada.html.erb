@@ -9,6 +9,7 @@
       <table class="table">
       <thead>
         <tr>
+          <th>Cantidad</th>
           <th>Polígono</th>        
           <th>Punto</th>
           <th>Orientación</th>
@@ -23,6 +24,7 @@
       <tbody class="searchable">
         <% @arrendadas.each do |camera| %>
           <tr>
+            <td><%= camera.qty %></td>
             <td><%= camera.polygon ? poligono : no_poligono %></td>
             <td><%= camera.spot %></td>
             <td><%= camera.orientation %></td>

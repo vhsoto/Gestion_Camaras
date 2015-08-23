@@ -55,4 +55,13 @@ $(document).on('ready page:load', function(){
   $('#localidadLink').click(function(){    
     $( "#localidad" ).fadeToggle('slow');
   });
-})
+
+  /* Smooth scrolling para anclas */
+  $('a.smooth').click(function(e) {
+      var $link = $(this);
+      var anchor  = $link.attr('href');
+      $('html, body').stop().animate({
+          scrollTop: $(anchor).offset().top
+      }, 5000);
+  });
+});

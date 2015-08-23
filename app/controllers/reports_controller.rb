@@ -82,13 +82,13 @@ class ReportsController < ApplicationController
   end
 
   def cantidad_cam
-    @hc_cantidad = Camera.where(project: 1).all.count
-    @o_cantidad = Camera.where(project: 2).all.count
-    @l_cantidad = Camera.where(project: 3).all.count
-    @s_cantidad = Camera.where(project: 4).all.count
-    @t_cantidad = Camera.where(project: 5).all.count
-    @u_cantidad = Camera.where(project: 6).all.count
-    @total_cam = Camera.all.count
+    @hc_cantidad = Camera.where(project: 1).sum(:qty)
+    @o_cantidad = Camera.where(project: 2).sum(:qty)
+    @l_cantidad = Camera.where(project: 3).sum(:qty)
+    @s_cantidad = Camera.where(project: 4).sum(:qty)
+    @t_cantidad = Camera.where(project: 5).sum(:qty)
+    @u_cantidad = Camera.where(project: 6).sum(:qty)
+    @total_cam = Camera.sum(:qty)
   end
 
   def cosec
