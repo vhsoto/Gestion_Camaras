@@ -1,8 +1,6 @@
 <h3><p>Cámara perteneciente a: <strong><%= proyecto @camera.project %></strong></p></h3>
 <br>
-<%= link_to 'Atrás', ruta_atras(@camera.project), class: "btn btn-info btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
-  <i class="fa fa-home"></i>
-<% end %>
+<%= link_to 'Atrás', ruta_atras(@camera.project), class: "btn btn-info btn-sm" %> 
 <br><br>
 <div class="table-responsive">
   <table class="table table-striped">
@@ -105,6 +103,7 @@
 <!--script map -->
 <script>
   function initialize() {
+
     var myLatlng = new google.maps.LatLng(<%= @camera.lat %>, <%= @camera.lng %>);
     var mapOptions = {
       zoom: 15,

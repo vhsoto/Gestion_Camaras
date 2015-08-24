@@ -5,7 +5,7 @@ class CamerasController < ApplicationController
   # GET /cameras.json
   def index
     if params[:search].blank?
-      @cameras = Camera.order(:location).page params[:page]
+      @cameras = Camera.order(:location).all#page params[:page]
     else
       @cameras = Camera.search(params[:search])
     end
@@ -81,7 +81,7 @@ class CamerasController < ApplicationController
 
   def conexion_humana
     if params[:search].blank?
-      @conexiones = Camera.where(project: 1).order(:location).page params[:page]
+      @conexiones = Camera.where(project: 1).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 1).search
     end
@@ -89,7 +89,7 @@ class CamerasController < ApplicationController
 
   def propia
     if params[:search].blank?
-      @propias = Camera.where(project: 2).order(:location).page params[:page]
+      @propias = Camera.where(project: 2).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 2).search
     end
@@ -97,7 +97,7 @@ class CamerasController < ApplicationController
 
   def arrendada
     if params[:search].blank?
-      @arrendadas = Camera.where(project: 3).order(:location).page params[:page]
+      @arrendadas = Camera.where(project: 3).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 3).search
     end
@@ -105,7 +105,7 @@ class CamerasController < ApplicationController
 
   def colegio
     if params[:search].blank?
-      @colegios = Camera.where(project: 4).order(:location).page params[:page]
+      @colegios = Camera.where(project: 4).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 4).search
     end
@@ -113,7 +113,7 @@ class CamerasController < ApplicationController
 
   def transmilenio
     if params[:search].blank?
-      @transmilenios = Camera.where(project: 5).order(:location).page params[:page]
+      @transmilenios = Camera.where(project: 5).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 5).search
     end
@@ -121,7 +121,7 @@ class CamerasController < ApplicationController
 
   def ute
     if params[:search].blank?
-      @utes = Camera.where(project: 6).order(:location).page params[:page]
+      @utes = Camera.where(project: 6).order(:location).all #page params[:page]
     else
       @conexiones = Camera.where(project: 6).search
     end

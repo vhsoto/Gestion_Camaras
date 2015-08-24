@@ -4,7 +4,7 @@ class Camera < ActiveRecord::Base
 
 	paginates_per 15
 
-  #before_save :create_keywords
+  before_save :create_keywords
 
   scope :search, ->(keyword) { where('keywords LIKE ?', "%#{keyword.downcase}%") if keyword.present? }
 
