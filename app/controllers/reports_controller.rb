@@ -62,23 +62,23 @@ class ReportsController < ApplicationController
   end
 
   def estado_bien
-    @hc_bien = Camera.where(condition: true, project: 1).all.count
-    @o_bien = Camera.where(condition: true, project: 2).all.count
-    @l_bien = Camera.where(condition: true, project: 3).all.count
-    @s_bien = Camera.where(condition: true, project: 4).all.count
-    @u_bien = Camera.where(condition: true, project: 5).all.count
-    @t_bien = Camera.where(condition: true, project: 6).all.count
-    @total_bien = Camera.where(condition: true).all.count
+    @hc_bien = Camera.where(condition: true, project: 1).sum(:qty)
+    @o_bien = Camera.where(condition: true, project: 2).sum(:qty)
+    @l_bien = Camera.where(condition: true, project: 3).sum(:qty)
+    @s_bien = Camera.where(condition: true, project: 4).sum(:qty)
+    @u_bien = Camera.where(condition: true, project: 5).sum(:qty)
+    @t_bien = Camera.where(condition: true, project: 6).sum(:qty)
+    @total_bien = Camera.where(condition: true).sum(:qty)
   end
 
   def estado_mal
-    @hc_mal = Camera.where(condition: false, project: 1).all.count
-    @o_mal = Camera.where(condition: false, project: 2).all.count
-    @l_mal = Camera.where(condition: false, project: 3).all.count
-    @s_mal = Camera.where(condition: false, project: 4).all.count
-    @t_mal = Camera.where(condition: false, project: 5).all.count
-    @u_mal = Camera.where(condition: false, project: 6).all.count
-    @total_mal = Camera.where(condition: false).all.count
+    @hc_mal = Camera.where(condition: false, project: 1).sum(:qty)
+    @o_mal = Camera.where(condition: false, project: 2).sum(:qty)
+    @l_mal = Camera.where(condition: false, project: 3).sum(:qty)
+    @s_mal = Camera.where(condition: false, project: 4).sum(:qty)
+    @t_mal = Camera.where(condition: false, project: 5).sum(:qty)
+    @u_mal = Camera.where(condition: false, project: 6).sum(:qty)
+    @total_mal = Camera.where(condition: false).sum(:qty)
   end
 
   def cantidad_cam
@@ -92,22 +92,22 @@ class ReportsController < ApplicationController
   end
 
   def cosec
-    @hc_cosec = Camera.group(:cosec).where(project: 1).count
-    @o_cosec = Camera.group(:cosec).where(project: 2).count
-    @l_cosec = Camera.group(:cosec).where(project: 3).count
-    @s_cosec = Camera.group(:cosec).where(project: 4).count
-    @t_cosec = Camera.group(:cosec).where(project: 5).count
-    @u_cosec = Camera.group(:cosec).where(project: 6).count
-    @total_cosec = Camera.group(:cosec).count
+    @hc_cosec = Camera.group(:cosec).where(project: 1).sum(:qty)
+    @o_cosec = Camera.group(:cosec).where(project: 2).sum(:qty)
+    @l_cosec = Camera.group(:cosec).where(project: 3).sum(:qty)
+    @s_cosec = Camera.group(:cosec).where(project: 4).sum(:qty)
+    @t_cosec = Camera.group(:cosec).where(project: 5).sum(:qty)
+    @u_cosec = Camera.group(:cosec).where(project: 6).sum(:qty)
+    @total_cosec = Camera.group(:cosec).sum(:qty)
   end
 
   def localidad
-    @hc_localidad = Camera.group(:location).where(project: 1).count
-    @o_localidad = Camera.group(:location).where(project: 2).count
-    @l_localidad = Camera.group(:location).where(project: 3).count
-    @s_localidad = Camera.group(:location).where(project: 4).count
-    @t_localidad = Camera.group(:location).where(project: 5).count
-    @u_localidad = Camera.group(:location).where(project: 6).count
-    @total_loc = Camera.group(:location).count
+    @hc_localidad = Camera.group(:location).where(project: 1).sum(:qty)
+    @o_localidad = Camera.group(:location).where(project: 2).sum(:qty)
+    @l_localidad = Camera.group(:location).where(project: 3).sum(:qty)
+    @s_localidad = Camera.group(:location).where(project: 4).sum(:qty)
+    @t_localidad = Camera.group(:location).where(project: 5).sum(:qty)
+    @u_localidad = Camera.group(:location).where(project: 6).sum(:qty)
+    @total_loc = Camera.group(:location).sum(:qty)
   end
 end

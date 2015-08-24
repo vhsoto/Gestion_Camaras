@@ -1,7 +1,4 @@
-<h1>REPORTES
-<%= link_to root_path, class: "btn btn-primary pull-right" do %>
-  <i class="fa fa-home"></i>
-<% end %></h1>
+<h1 class="text-center">REPORTES</h1>
 <br>
 <div class="row">
 	<div class="col-md-1 col-lg-1"></div>
@@ -330,39 +327,20 @@
 			</div>	
 		</div>
 	<!-- div localidad -->
-		<div class="table" id="localidad" style="display: none;">
-			<div class="panel panel-info">
+		
+			<div class="panel panel-info" id="localidad" style="display: none;">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Cámaras por localidad</h3>
 			  </div>
 			  <div class="panel-body">
+			  	<div class="table-responsive" >
 			    <table class="table table-striped">
 						<thead>
 							<tr>
 								<th></th>					
 									<% @total_loc.each do |total, v| %>
 										<th><%= total %></th>
-									<% end %>			
-								<!-- <th>Antonio Nariño</th>
-								<th>Barrios Unidos</th>
-								<th>Bosa</th>
-								<th>Chapinero</th>
-								<th>Ciudad Bolivar</th>
-								<th>Engativá</th>
-								<th>Fontibón</th>
-								<th>Kennedy</th>
-								<th>La Candelaria</th>
-								<th>Los Mártires</th>
-								<th>Pte. Aranda</th>
-								<th>Rafael Uribe Uribe</th>
-								<th>San Cristóbal</th>
-								<th>Santa Fe</th>
-								<th>Suba</th>
-								<th>Sumapaz</th>
-								<th>Teusaquillo</th>
-								<th>Tunjuelito</th>
-								<th>Usaquén</th>
-								<th>Usme</th> -->
+									<% end %>									
 							</tr>
 						</thead>
 						<tbody>
