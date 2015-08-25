@@ -39,7 +39,7 @@
                   </div>        
                 <% end %>
             </td>
-            <td class="text-center"><a href="#" id="ubicacion"><i class="fa fa-map-marker"></i></a></td>
+            <td class="text-center"><a href="#" data-toggle="modal" data-target="#mapa"><i class="fa fa-map-marker"></i></a></td>
             <td><%= link_to edit_camera_path(@camera) do %>
                   <i class="fa fa-pencil"></i>
                 <% end %>
@@ -87,6 +87,15 @@
 <!-- Mapa -->
 <% if @camera.lat.present? %>  
   <center>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="mapa" >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">          
+          <div id="map-canvas" ></div>
+        </div>
+
+      </div>
+    </div>
+
     <div class="mapa">
       <div id="map-canvas"></div>
     </div>    
@@ -117,12 +126,8 @@
         title: 'Cámara'
     });
   }
-
-  $('#ubicacion').click(function(){
-    $('.mapa').slideToggle('slow');
-  });
   
-  $(document).on('page:load', initialize);
+  $('#mapa').on('shown.bs.modal', initialize);
   $(document).ready(initialize);
 </script>
 
