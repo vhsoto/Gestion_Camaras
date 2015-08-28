@@ -77,3 +77,6 @@ gem 'underscore-rails'
 
 #Usuarios
 gem 'devise'
+
+#policy
+gem "pundit"

@@ -6,30 +6,35 @@ class CamerasController < ApplicationController
   def index
     if params[:search].blank?
       @cameras = Camera.order(:location).all#page params[:page]
+      authorize @cameras
     else
       @cameras = Camera.search(params[:search])
+      authorize @cameras
     end
   end
 
   # GET /cameras/1
   # GET /cameras/1.json
   def show
+    authorize @camera
   end
 
   # GET /cameras/new
-  def new
+  def new    
     @camera = Camera.new
+    authorize @camera
   end
 
   # GET /cameras/1/edit
   def edit
+    authorize @camera
   end
 
   # POST /cameras
   # POST /cameras.json
   def create
     @camera = Camera.new(camera_params)
-
+    authorize @camera
     respond_to do |format|
       if @camera.save
         format.html { redirect_to @camera, notice: 'Cámara creada con éxito.' }
@@ -44,6 +49,7 @@ class CamerasController < ApplicationController
   # PATCH/PUT /cameras/1
   # PATCH/PUT /cameras/1.json
   def update
+    authorize @camera
     respond_to do |format|
       if @camera.update(camera_params)
         format.html { redirect_to @camera, notice: 'Cámara actualizada con éxito.' }
@@ -58,6 +64,7 @@ class CamerasController < ApplicationController
   # DELETE /cameras/1
   # DELETE /cameras/1.json
   def destroy
+    authorize @camera
     @camera.destroy
     respond_to do |format|
       format.html { redirect_to cameras_url, notice: 'Cámara eliminada con éxito.' }
@@ -66,6 +73,7 @@ class CamerasController < ApplicationController
   end
 
   def import
+    authorize @cameras
     respond_to do |format|  
       begin
         @cameras = Camera.import(params[:file])
@@ -79,51 +87,63 @@ class CamerasController < ApplicationController
   end
 
 
-  def conexion_humana
+  def conexion_humana    
     if params[:search].blank?
-      @conexiones = Camera.where(project: 1).order(:location).all #page params[:page]
+      @conexiones = Camera.where(project: 1).order(:location).all
+      authorize @conexiones #page params[:page]      
     else
       @conexiones = Camera.where(project: 1).search
+      authorize @conexiones
     end
   end
 
   def propia
     if params[:search].blank?
       @propias = Camera.where(project: 2).order(:location).all #page params[:page]
+      authorize @propias
     else
-      @conexiones = Camera.where(project: 2).search
+      @propias = Camera.where(project: 2).search
+      authorize @propias
     end
   end
 
   def arrendada
     if params[:search].blank?
       @arrendadas = Camera.where(project: 3).order(:location).all #page params[:page]
+      authorize @arrendadas
     else
-      @conexiones = Camera.where(project: 3).search
+      @arrendadas = Camera.where(project: 3).search
+      authorize @arrendadas
     end
   end
 
   def colegio
     if params[:search].blank?
       @colegios = Camera.where(project: 4).order(:location).all #page params[:page]
+      authorize @colegios
     else
-      @conexiones = Camera.where(project: 4).search
+      @colegios = Camera.where(project: 4).search
+      authorize @colegios
     end
   end
 
   def transmilenio
     if params[:search].blank?
       @transmilenios = Camera.where(project: 5).order(:location).all #page params[:page]
+      authorize @transmilenios
     else
-      @conexiones = Camera.where(project: 5).search
+      @transmilenios = Camera.where(project: 5).search
+      authorize @transmilenios
     end
   end
 
   def ute
     if params[:search].blank?
       @utes = Camera.where(project: 6).order(:location).all #page params[:page]
+      authorize @utes
     else
-      @conexiones = Camera.where(project: 6).search
+      @utes = Camera.where(project: 6).search
+      authorize @utes
     end
   end
 

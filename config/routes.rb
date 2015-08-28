@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:update, :show]
 
   authenticated :user do
-    root to: 'total_camera#index', as: :authenticated_root
+    root to: 'welcome#index', as: :authenticated_root
   end
 
   resources :events

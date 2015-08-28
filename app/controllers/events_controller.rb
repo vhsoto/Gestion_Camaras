@@ -6,16 +6,19 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    authorize @events
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    authorize @event
   end
 
   # GET /events/new
   def new
     @event = @camera.events.build
+    authorize @event
   end
 
   # GET /events/1/edit
@@ -26,7 +29,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create   
     @event = @camera.events.create(event_params)
-
+    authorize @event
     respond_to do |format|
       if @event.save
         format.html { redirect_to camera_path(@camera), notice: 'Novedad creada con éxito.' }
@@ -41,6 +44,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    authorize @event
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to camera_path(@camera), notice: 'Novedad actualizada con éxito.' }
@@ -55,6 +59,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    authorize @event
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Novedad eliminada con éxito.' }
