@@ -54,35 +54,16 @@ $(document).on('ready page:load', function(){
 
   $('#localidadLink').click(function(){    
     $( "#localidad" ).fadeToggle('slow');
-  });  
+  }); 
 });
 
-
-// var map;
-//   var src = 'https://developers.google.com/maps/tutorials/kml/westcampus.kml';
-//   function initialize() {
-    
-//   var mapOptions = {
-//       zoom: 2,
-//       center: {lat: -33.865427, lng: 151.196123},
-//       mapTypeId: google.maps.MapTypeId.TERRAIN
-//     };
-//     map = new google.maps.Map(document.getElementById('map'),
-//         mapOptions);
-//     loadKmlLayer(src, map);
-//   }
-
-//   function loadKmlLayer(src, map) {
-//     var kmlLayer = new google.maps.KmlLayer(src, {
-//       suppressInfoWindows: true,
-//       preserveViewport: false,
-//       map: map
-//     });
-//     google.maps.event.addListener(kmlLayer, 'click', function(event) {
-//       var content = event.featureData.infoWindowHtml;
-//       var testimonial = document.getElementById('capture');
-//       testimonial.innerHTML = content;
-//     });
-//   }
-//   $(document).ready(initialize);
-//   $(document).on('page:load', initialize);
+// $(document).ready(function() {
+//     $( '.navbar' ).onmouseover(
+//         function(){
+//             $(this).slideDown(200);
+//         },
+//         function(){
+//             $(this).slideUp(200);
+//         }
+//     );
+// });

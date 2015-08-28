@@ -8,12 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">    
+  <nav class="navbar navbar-fixed-top" role="navigation">    
     <div class="container">      
       <br>        
-      <div class="navbar-header">
-        <%= image_tag "FVS.png", size: "100x40", class: "nav-brand", style: "margin-top: -8px;" %>                   
-      </div>  
+       
       <ul class="nav navbar-nav navbar-right" style="margin-top: -10px;">
         
         <%= link_to  root_path, class: "nav-brand pull-left", style: "margin-top: 10px;" do  %>
@@ -42,7 +40,7 @@
         <% else %> 
         <ul class="nav navbar-nav"> 
           <li><%# link_to "Regístrate", new_user_registration_path %></li>
-          <li><%= link_to "Ingresa", new_user_session_path %></li>
+          <li><%= link_to "Ingresa", new_user_session_path, class: "nav-brand pull-right" %></li>
         </ul>
       <% end %>
       </ul>
@@ -57,7 +55,7 @@
       <% end %>
     </div>      
   </nav>    
-  <br><br>
+  <br>
 	<div class="container">
     <br><br>
 		<%= yield %>

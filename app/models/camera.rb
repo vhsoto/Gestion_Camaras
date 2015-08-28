@@ -21,4 +21,3 @@ class Camera < ActiveRecord::Base
 	    self.keywords = [spot, address, orientation, location, cosec].map(&:downcase).join(' ')
 	end
 end
-

@@ -2,132 +2,17 @@
 <p class="text-center">Listado completo de cámaras
   (Conexión Humana, Arrendadas, Propias, Colegios, Transmilenio y UTE)</p>
 
-<div class="row">
-<%= link_to conexion_humana_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Conexión Humana
-        </h3>           
-        <p>
-          Cámaras público - privadas.
-          <br><br>
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="row text-center">
+  <%= link_to conexion_humana_cameras_path do %>  
+    <%= image_tag "logo_conexión_humana.jpg", size: "150x150" %>    
   <% end %>
-  <%= link_to propia_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Propias
-        </h3>           
-        <p>
-          propias.
-          <br> <br>
-        </p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <%= link_to arrendada_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Arrendadas
-        </h3>           
-        <p>
-          Cámaras Siemens.
-          <br> <br>
-        </p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <%= link_to colegio_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Colegios
-        </h3>           
-        <p>
-          Cámaras colegios.
-          <br> <br>
-        </p>
-      </div>
-    </div>
-  </div>  
+  
+  <%= link_to transmilenio_cameras_path do %>
+    <%= image_tag "logo_sivit.jpg", size: "150x150" %>
   <% end %>    
 </div>
-<div class="row">  
-  <div class="col-xs-3"></div>
-  <%= link_to transmilenio_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Transmilenio
-        </h3>           
-        <p>
-          Cámaras Transmilenio
-          <br> <br>
-        </p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <%= link_to ute_cameras_path do %>
-  <div class="col-xs-3">
-    <div class="offer offer-radius offer-info">
-      <div class="shape">
-        <div class="shape-text">
-          cam               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          UTE
-        </h3>           
-        <p>
-          Cámaras UTE.
-          <br> (2k -5k)
-        </p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <div class="col-xs-3"></div>
-</div>
+  
+  
 <br>
 <hr>
 <div class="text-center">  
