@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-
-  get 'welcome/index'
+  
 
   devise_for :users
   resources :users, only: [:update, :show]
 
   authenticated :user do
-    root to: 'welcome#index', as: :authenticated_root
+    root to: 'total_camera#index', as: :pagina_logueo
   end
+  root 'welcome#index'
 
-  resources :events
-
-  root 'welcome#index'  
+  resources :events    
 
   get 'reports/index'
+  get 'total_camera/index'
 
   resources :cameras do
     resources :events
