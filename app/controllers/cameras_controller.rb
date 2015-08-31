@@ -5,10 +5,18 @@ class CamerasController < ApplicationController
   # GET /cameras.json
   def index
     if params[:search].blank?
-      @cameras = Camera.order(:location).all#page params[:page]
+      @cameras = Camera.order(:location).all.page(params[:page]).per(params[:per])
+      respond_to do |format|
+        format.js { render 'cameras/camera'} 
+        format.html
+      end
       authorize @cameras
     else
-      @cameras = Camera.search(params[:search])
+      @cameras = Camera.search(params[:search]).page(params[:page]).per(params[:per])
+      respond_to do |format|
+        format.js 
+        format.html
+      end
       authorize @cameras
     end
   end

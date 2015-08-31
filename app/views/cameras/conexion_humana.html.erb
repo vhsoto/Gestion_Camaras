@@ -73,42 +73,38 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <h4 class="text-center">Cámaras Conexión Humana</h4>
-      <div id="capture" class="pull-right" style="padding-right: 20px; margin-top: 20px;"></div>
-      <div id="map-canvas" ></div>
+      <div id="content-window" class="pull-right" style="padding-right: 20px; margin-top: 20px;"></div>
+      <div id="map-canvas"></div>      
     </div>
   </div>
 </div>
 
 <!--script map -->
 <script>
-  var map;
-  var src = 'https://www.dropbox.com/s/cm2hhgk46hsyjm5/doc.kml?dl=1';
+  function initMap() {
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 12,
+    center: {lat: 37.06, lng: -95.68}
+  });
 
-  function initialize() {
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-      center: new google.maps.LatLng(-19.257753, 146.823688),
-      zoom: 2,
-      draggable: true,      
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-    });
-    loadKmlLayer(src, map);
+  var kmlLayer = new google.maps.KmlLayer({
+    url: 'https://www.dropbox.com/s/cm2hhgk46hsyjm5/doc.kml?dl=1',
+    suppressInfoWindows: true,
+    map: map
+  });
+
+  kmlLayer.addListener('click', function(kmlEvent) {
+    var text = kmlEvent.featureData.description;
+    showInContentWindow(text);
+  });
+
+  function showInContentWindow(text) {
+    var sidediv = document.getElementById('content-window');
+    sidediv.innerHTML = text;
   }
 
-  function loadKmlLayer(src, map) {
-    var kmlLayer = new google.maps.KmlLayer(src, {
-      suppressInfoWindows: true,
-      preserveViewport: false,
-      map: map
-    });
-    google.maps.event.addListener(kmlLayer, 'click', function(event) {
-      var content = event.featureData.infoWindowHtml;
-      var testimonial = document.getElementById('capture');
-      testimonial.innerHTML = content;
-    });
-  }
-  
-  
-  $('#mapa-completo').on('shown.bs.modal', initialize);
-  $(document).ready(initialize);
+}
+  $('#mapa-completo').on('shown.bs.modal', initMap);
+  $(document).ready(initMap);
 
 </script>

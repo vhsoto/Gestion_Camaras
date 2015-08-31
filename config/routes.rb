@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'colegio'
       get 'transmilenio'
       get 'ute'
+      get 'index'
     end
     
   end

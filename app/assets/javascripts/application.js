@@ -22,12 +22,15 @@
 
 $(document).on('ready page:load', function(){
 
+  //checkbox slider
   $('input:checkbox').bootstrapSwitch();
 
+  //mensajes de alerta que desaparecen
   setTimeout(function(){    
-    $('.alert').fadeToggle(1800);
+    $('.alert').fadeToggle(1850);
   });
 
+  //input tipo calendanrio
   $('.datepicker').datepicker({
     format: "dd-mm-yyyy",
     language: "es",
@@ -36,6 +39,7 @@ $(document).on('ready page:load', function(){
     toggleActive: true
   });  
 
+  //reportes
   $('#poligonoLink').click(function(){    
     $( "#poligono" ).fadeToggle('slow');
   });
@@ -55,15 +59,20 @@ $(document).on('ready page:load', function(){
   $('#localidadLink').click(function(){    
     $( "#localidad" ).fadeToggle('slow');
   }); 
+
+
+  //smooth scroll
+  $(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 800, 'swing');
+    });
+  });
 });
 
-// $(document).ready(function() {
-//     $( '.navbar' ).onmouseover(
-//         function(){
-//             $(this).slideDown(200);
-//         },
-//         function(){
-//             $(this).slideUp(200);
-//         }
-//     );
-// });

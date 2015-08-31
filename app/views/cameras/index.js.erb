@@ -1,0 +1,2 @@
+$('#cameras').html('<%= escape_javascript render (partial: "cameras/camera", :cameras => @cameras) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@cameras, :remote => true).to_s) %>');
