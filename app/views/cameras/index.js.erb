@@ -1,2 +1,2 @@
-$('#cameras').html('<%= escape_javascript render (partial: "cameras/camera", :cameras => @cameras) %>');
-$('#paginator').html('<%= escape_javascript(paginate(@cameras, :remote => true).to_s) %>');
+$('#cameras').html("<%= escape_javascript(render 'cameras/camera') %>");
+$('#paginator').html("<%= escape_javascript(paginate(@cameras, :remote => true))  %>");

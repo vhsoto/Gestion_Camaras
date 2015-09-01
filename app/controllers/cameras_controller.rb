@@ -7,7 +7,7 @@ class CamerasController < ApplicationController
     if params[:search].blank?
       @cameras = Camera.order(:location).all.page(params[:page]).per(params[:per])
       respond_to do |format|
-        format.js { render 'cameras/camera'} 
+        format.js { } 
         format.html
       end
       authorize @cameras
