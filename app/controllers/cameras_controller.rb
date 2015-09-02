@@ -56,12 +56,12 @@ class CamerasController < ApplicationController
 
   # PATCH/PUT /cameras/1
   # PATCH/PUT /cameras/1.json
-  def update
-    authorize @camera
+  def update    
     respond_to do |format|
       if @camera.update(camera_params)
         format.html { redirect_to @camera, notice: 'Cámara actualizada con éxito.' }
         format.json { render :show, status: :ok, location: @camera }
+        authorize @camera
       else
         format.html { render :edit }
         format.json { render json: @camera.errors, status: :unprocessable_entity }
@@ -71,22 +71,22 @@ class CamerasController < ApplicationController
 
   # DELETE /cameras/1
   # DELETE /cameras/1.json
-  def destroy
-    authorize @camera
+  def destroy    
     @camera.destroy
     respond_to do |format|
       format.html { redirect_to cameras_url, notice: 'Cámara eliminada con éxito.' }
       format.json { head :no_content }
     end
+    authorize @camera
   end
 
-  def import
-    authorize @cameras
+  def import    
     respond_to do |format|  
       begin
         @cameras = Camera.import(params[:file])
         format.html { redirect_to cameras_url, notice: "Archivo subido con éxito" }
         format.json { render :index, status: :ok }
+        authorize @cameras
       rescue
         format.html { redirect_to cameras_url, alert: "Archivo no subido, vuelve a intentarlo" }
         format.json { render json: @camera.errors, status: :unprocessable_entity }

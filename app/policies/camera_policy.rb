@@ -42,4 +42,8 @@ class CameraPolicy < ApplicationPolicy
   def ute?
     ( user.present? )
   end
+
+  def import?
+    ( user.present? )
+  end
 end
