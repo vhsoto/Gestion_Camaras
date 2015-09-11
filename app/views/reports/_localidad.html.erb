@@ -1,0 +1,77 @@
+<div class="modal fade" id="myLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reporte cámaras por localidad</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="table-responsive" >
+			    <table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>					
+									<% @total_loc.each do |total, v| %>
+										<th><%= total %></th>
+									<% end %>									
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+									<% @hc_localidad.each do |conexion, v| %>
+										<td><%=  v %></td>
+									<% end %>			
+							</tr>
+							<!-- <tr>
+								<td>PROPIAS</td>
+									<%# @o_localidad.each do |propia,v| %>
+										<td><%# v %></td>
+									<%# end %>	
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<%# @l_localidad.each do |arrendada,v| %>
+									<td><%# v %></td>
+								<%# end %>					
+							</tr>
+							<tr>
+								<td>COLEGIOS</td>
+								<%# @s_localidad.each do |colegio,v| %>
+								<td><%# v %></td>
+								<%# end %>					
+							</tr>	
+							<tr>
+								<td>TRANSMILENIO</td>
+								<%# @t_localidad.each do |transmi,v| %>
+								<td><%# v %></td>
+								<%# end %>					
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<%# @u_localidad.each do |ute,v| %>
+								<td><%# v %></td>
+								<%# end %>					
+							</tr> -->
+							<tr>
+								<td>total</td>
+								<% @total_loc.each do |total, v| %>
+								<td><%= v %></td>
+								<% end %>					
+							</tr>			
+						</tbody>
+					</table>
+			  </div>
+			  <br>
+			  <div id="location" style="margin-left: 40px;" class="row">
+			  	<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= pie_chart Camera.group(:location).sum(:qty) %>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= scatter_chart Camera.group(:location).sum(:qty) %>
+					</div>			  	
+			  </div>
+      </div>
+    </div>
+  </div>
+</div>

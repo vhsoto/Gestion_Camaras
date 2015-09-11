@@ -1,0 +1,71 @@
+<div class="modal fade" id="myCondition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reporte del estado de cámaras</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="panel panel-info table-responsive">
+      		<div class="panel-body">
+					  <table class="table">
+							<thead>
+								<tr>
+									<td><strong>Proyecto</strong></td>
+									<td><strong><i class="fa fa-thumbs-up"></i></strong></td>
+									<td><strong><i class="fa fa-thumbs-down"></i></strong></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>CONEXIÓN HUMANA</td>
+									<td><%= @hc_bien %></td>
+									<td><%= @hc_mal %></td>
+								</tr>
+								<tr>
+									<td>PROPIAS</td>
+									<td><%= @o_bien %></td>
+									<td><%= @o_mal %></td>
+								</tr>
+								<tr>
+									<td>ARRENDADAS</td>
+									<td><%= @l_bien %></td>
+									<td><%= @l_mal %></td>
+								</tr>		
+								<tr>
+									<td>COLEGIOS</td>
+									<td><%= @s_bien %></td>
+									<td><%= @s_mal %></td>
+								</tr>
+								<tr>
+									<td>TRANSMILENIO</td>
+									<td><%= @t_bien %></td>
+									<td><%= @t_mal %></td>
+								</tr>
+								<tr>
+									<td>UTE</td>
+									<td><%= @u_bien %></td>
+									<td><%= @u_mal %></td>
+								</tr>	
+								<tr>
+									<td><strong>Total</strong></td>
+									<td><%= @total_bien %></td>
+									<td><%= @total_mal %></td>
+								</tr>		
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h4>Gráfica</h4>				
+				<div id="condition" style="margin-left: 40px;" class="row">
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= pie_chart Camera.group(:condition).sum(:qty) %>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= bar_chart Camera.group(:condition).sum(:qty) %>
+					</div>	    	 	   	 	
+	    	</div>  		    		  				
+      </div>
+    </div>
+  </div>
+</div>

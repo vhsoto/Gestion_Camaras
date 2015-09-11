@@ -10,7 +10,11 @@
 @import "bootstrap3-switch";
 
 
+@media screen and (min-width: 768px) {
+  
+  .modal-dialog  {width:80%;}
 
+}
 
 .row {
     margin-top: 32px;   
@@ -177,4 +181,14 @@
 
 .navbar-white {
   background-color: #FFF;
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+    text-decoration: none;
+    background-color: #FFF;
+}
+
+.sidebar{
+  background-color: #000;
+  border-right-radius: 50%;
 }

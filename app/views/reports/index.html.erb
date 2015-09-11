@@ -1,395 +1,56 @@
-<h1 class="text-center">REPORTES</h1>
-<br>
-<div class="row">
-	<div class="col-md-1 col-lg-1"></div>
-  <div class="col-xs-3 col-md-2 col-lg-2">
-    <div class="offer offer-radius offer-info" id="poligonoLink">
-      <div class="shape">
-        <div class="shape-text">
-          rep               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Polígono
-        </h3>           
-        <p>
-          Cantidad de cámaras
-          <br> en el polígono.
-        </p>
-      </div>
-    </div>
-  </div>
+<% content_for :reports do %>
+	<script>
+    var Chartkick = {"language": "es"};
+  </script>
+	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-  <div class="col-xs-3 col-md-2 col-lg-2">
-    <div class="offer offer-radius offer-info"  id="estadoLink">
-      <div class="shape">
-        <div class="shape-text">
-          rep               
-        </div>
-      </div>
-      <div class="offer-content">
-      	<br>
-        <h3 class="lead">
-          Estado
-        </h3>           
-        <p>
-          Estado de las cámaras 
-          <br> bien / mal. 
-        </p>
-      </div>
-    </div>
-  </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////-->
+	<div class="container">
+		<h1>Reportes</h1>
+		<h4>Cámaras polígono</h4>
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myPolygon">
+		  Ver reporte
+		</button>
+		<%= render 'poligono' %>
 
-  <div class="col-xs-3 col-md-2 col-lg-2">
-    <div class="offer offer-radius offer-info" id="cantidadLink">
-      <div class="shape">
-        <div class="shape-text">
-          rep               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Cantidad
-        </h3>           
-        <p>
-          Número total de
-          <br> cámaras por proyecto.
-        </p>
-      </div>
-    </div>
-  </div>
-	
-  <div class="col-xs-3 col-md-2 col-lg-2">
-    <div class="offer offer-radius offer-info" id="cosecLink">
-      <div class="shape">
-        <div class="shape-text">
-          rep               
-        </div>
-      </div>
-      <div class="offer-content">
-      	<br>
-        <h3 class="lead">
-          Cosec
-        </h3>           
-        <p>
-          Cantidad de cámaras
-          <br> por cosec.
-        </p>
-      </div>
-    </div>
-  </div>
+		<hr>
 
-  <div class="col-xs-3 col-md-2 col-lg-2">
-    <div class="offer offer-radius offer-info" id="localidadLink">
-      <div class="shape">
-        <div class="shape-text">
-          rep               
-        </div>
-      </div>
-      <div class="offer-content">
-        <h3 class="lead">
-          Localidad
-        </h3>           
-        <p>
-          Cantidad de cámaras 
-          <br> por localidad.
-        </p>
-      </div>
-    </div>
-  </div> 
-  <div class="col-md-1 col-lg-1"></div> 
-</div>
+		<h4>Cámaras por localidad</h4>
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myLocation">
+		  Ver reporte
+		</button>
+		<%= render 'localidad' %>
 
-<hr>
-<!-- div poligono -->
-<div class="row">
-	<div class="col-sm-4"></div>
-	<div class="col-xs-3 col-sm-3 col-md-3-col-lg-3 text-center">
-		<div class="table" id="poligono" style="display: none;">
-			<div class="panel panel-info">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Cámaras del polígono</h3>
-			  </div>
-			  <div class="panel-body">
-			    <table class="table">
-						<thead>
-							<tr>
-								<th><strong>Proyecto</strong></th>
-								<th><strong>Cantidad</strong></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CONEXIÓN HUMANA</td>
-								<td><%= @conexion %></td>
-							</tr>
-							<tr>
-								<td>PROPIAS</td>
-								<td><%= @propia %></td>
-							</tr>
-							<tr>
-								<td>ARRENDADAS</td>
-								<td><%= @arriendo %></td>
-							</tr>		
-							<tr>
-								<td>COLEGIOS</td>
-								<td><%= @colegio %></td>
-							</tr>
-							<tr>
-								<td>TRANSMILENIO</td>
-								<td><%= @transmi %></td>
-							</tr>
-							<tr>
-								<td>UTE</td>
-								<td><%= @ute %></td>
-							</tr>	
-							<tr>
-								<td><strong>Total</strong></td>
-								<td><%= @total_pol %></td>
-							</tr>		
-						</tbody>
-					</table>
-		  	</div>
-			</div>		
-		</div>
-	<!-- div estado -->
-		<div class="table" id="estado" style="display: none;">
-			<div class="panel panel-info">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Estado de las cámaras</h3>
-			  </div>
-			  <div class="panel-body">
-			    <table class="table">
-						<thead>
-							<tr>
-								<td><strong>Proyecto</strong></td>
-								<td><strong><i class="fa fa-thumbs-up"></i></strong></td>
-								<td><strong><i class="fa fa-thumbs-down"></i></strong></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CONEXIÓN HUMANA</td>
-								<td><%= @hc_bien %></td>
-								<td><%= @hc_mal %></td>
-							</tr>
-							<tr>
-								<td>PROPIAS</td>
-								<td><%= @o_bien %></td>
-								<td><%= @o_mal %></td>
-							</tr>
-							<tr>
-								<td>ARRENDADAS</td>
-								<td><%= @l_bien %></td>
-								<td><%= @l_mal %></td>
-							</tr>		
-							<tr>
-								<td>COLEGIOS</td>
-								<td><%= @s_bien %></td>
-								<td><%= @s_mal %></td>
-							</tr>
-							<tr>
-								<td>TRANSMILENIO</td>
-								<td><%= @t_bien %></td>
-								<td><%= @t_mal %></td>
-							</tr>
-							<tr>
-								<td>UTE</td>
-								<td><%= @u_bien %></td>
-								<td><%= @u_mal %></td>
-							</tr>	
-							<tr>
-								<td><strong>Total</strong></td>
-								<td><%= @total_bien %></td>
-								<td><%= @total_mal %></td>
-							</tr>		
-						</tbody>
-					</table>
-			  </div>
-			</div>		
-		</div>
-	<!--div cantidad -->
-		<div class="table" id="cantidad" style="display: none;">
-			<div class="panel panel-info">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Cantidad de cámaras</h3>
-			  </div>
-			  <div class="panel-body">
-			    <table class="table">
-						<thead>
-							<tr>
-								<td><strong>Proyecto</strong></td>
-								<td><strong>Cantidad</strong></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CONEXIÓN HUMANA</td>
-								<td><%= @hc_cantidad %></td>
-							</tr>
-							<tr>
-								<td>PROPIAS</td>
-								<td><%= @o_cantidad %></td>
-							</tr>
-							<tr>
-								<td>ARRENDADAS</td>
-								<td><%= @l_cantidad %></td>
-							</tr>		
-							<tr>
-								<td>COLEGIOS</td>
-								<td><%= @s_cantidad %></td>
-							</tr>
-							<tr>
-								<td>TRANSMILENIO</td>
-								<td><%= @t_cantidad %></td>
-							</tr>
-							<tr>
-								<td>UTE</td>
-								<td><%= @u_cantidad %></td>
-							</tr>	
-							<tr>
-								<td><strong>Total</strong></td>
-								<td><%= @total_cam %></td>
-							</tr>		
-						</tbody>
-					</table>
-			  </div>
-			</div>	
-		</div>
+		<hr>
+
+		<h4>Cámaras por cantidad según proyecto</h4>
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myQty">
+		  Ver reporte
+		</button>
+		<%= render 'cantidad' %>
+
+		<hr>
+
+		<h4>Cámaras por COSEC</h4>
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myCosec">
+		  Ver reporte
+		</button>
+		<%= render 'cosec' %>		
+
+		<hr>
+
+		<h4>Cámaras por el estado en que se encuentren</h4>
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myCondition">
+		  Ver reporte
+		</button>
+		<%= render 'condicion' %>	
 	</div>
-</div>
+	<br>
+	<br>
+<% end %>
 
-	<!--div cosec -->
-<div class="row">
-	<div class="col-md-9-col-lg-9">
-		<div class="table" id="cosec" style="display: none;">
-			<div class="panel panel-info">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Cámaras por cosec</h3>
-			  </div>
-			  <div class="panel-body">
-			    <table class="table table-striped">
-						<thead>
-							<tr>
-								<th></th>					
-								<% @total_cosec.each do |total, v| %>
-								<th><%= total  %></th>
-								<% end %>					
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CONEXIÓN HUMANA</td>							
-									<% @hc_cosec.each do |conexion, v| %>									
-									<td><%= v %></td>											
-									<% end %>			
-							</tr>
-							<tr>
-								<td>PROPIAS</td>
-									<% @o_cosec.each do |propia,v| %>
-										<td><%= propia %></td>
-									<% end %>	
-							</tr>
-							<tr>
-								<td>ARRENDADAS</td>
-								<% @l_cosec.each do |arrendada,v| %>
-									<td><%= arrendada %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>COLEGIOS</td>
-								<% @s_cosec.each do |colegio,v| %>
-								<td><%= colegio %></td>
-								<% end %>					
-							</tr>	
-							<tr>
-								<td>TRANSMILENIO</td>
-								<% @t_cosec.each do |transmi,v| %>
-								<td><%= transmi %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>UTE</td>
-								<% @u_cosec.each do |ute,v| %>
-								<td><%= ute %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>total</td>
-								<% @total_cosec.each do |total, v| %>
-								<td><%= v  %></td>
-								<% end %>											
-							</tr>			
-						</tbody>
-					</table>
-			  </div>
-			</div>	
-		</div>
-	<!-- div localidad -->
-		
-			<div class="panel panel-info" id="localidad" style="display: none;">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Cámaras por localidad</h3>
-			  </div>
-			  <div class="panel-body">
-			  	<div class="table-responsive" >
-			    <table class="table table-striped">
-						<thead>
-							<tr>
-								<th></th>					
-									<% @total_loc.each do |total, v| %>
-										<th><%= total %></th>
-									<% end %>									
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CONEXIÓN HUMANA</td>
-									<% @hc_localidad.each do |conexion, v| %>
-										<td><%=  v %></td>
-									<% end %>			
-							</tr>
-							<tr>
-								<td>PROPIAS</td>
-									<% @o_localidad.each do |propia,v| %>
-										<td><%= v %></td>
-									<% end %>	
-							</tr>
-							<tr>
-								<td>ARRENDADAS</td>
-								<% @l_localidad.each do |arrendada,v| %>
-									<td><%= v %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>COLEGIOS</td>
-								<% @s_localidad.each do |colegio,v| %>
-								<td><%= v %></td>
-								<% end %>					
-							</tr>	
-							<tr>
-								<td>TRANSMILENIO</td>
-								<% @t_localidad.each do |transmi,v| %>
-								<td><%= v %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>UTE</td>
-								<% @u_localidad.each do |ute,v| %>
-								<td><%= v %></td>
-								<% end %>					
-							</tr>
-							<tr>
-								<td>total</td>
-								<% @total_loc.each do |total, v| %>
-								<td><%= v %></td>
-								<% end %>					
-							</tr>			
-						</tbody>
-					</table>
-			  </div>
-			</div>		
-		</div>
-	</div>
-</div>

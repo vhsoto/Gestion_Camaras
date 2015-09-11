@@ -1,0 +1,61 @@
+<div class="modal fade" id="myPolygon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reporte cámaras polígono</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="panel panel-info table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th><strong>Proyecto</strong></th>
+								<th><strong>Cantidad</strong></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+								<td><%= @conexion %></td>
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+								<td><%= @propia %></td>
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<td><%= @arriendo %></td>
+							</tr>		
+							<tr>
+								<td>COLEGIOS</td>
+								<td><%= @colegio %></td>
+							</tr>
+							<tr>
+								<td>TRANSMILENIO</td>
+								<td><%= @transmi %></td>
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<td><%= @ute %></td>
+							</tr>	
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><%= @total_pol %></td>
+							</tr>		
+						</tbody>
+					</table>
+				</div>
+				<h4>Gráfica</h4>				
+				<div id="polygon" style="margin-left: 40px;" class="row">
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= pie_chart Camera.group(:polygon).sum(:qty) %>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= column_chart Camera.group(:polygon).sum(:qty) %>
+					</div>	    	 	   	 	
+	    	</div>  		    		  				
+      </div>
+    </div>
+  </div>
+</div>

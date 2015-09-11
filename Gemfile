@@ -6,8 +6,10 @@ gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
+gem "autoprefixer-rails"
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -80,3 +82,6 @@ gem 'devise'
 
 #policy
 gem "pundit"
+
+#Graphics
+gem "chartkick"

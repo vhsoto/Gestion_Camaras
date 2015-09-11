@@ -1,0 +1,61 @@
+<div class="modal fade" id="myQty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reporte cantidad de cámaras según proyecto</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="panel panel-info table-responsive">
+				  <table class="table">
+						<thead>
+							<tr>
+								<td><strong>Proyecto</strong></td>
+								<td><strong>Cantidad</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CONEXIÓN HUMANA</td>
+								<td><%= @hc_cantidad %></td>
+							</tr>
+							<tr>
+								<td>PROPIAS</td>
+								<td><%= @o_cantidad %></td>
+							</tr>
+							<tr>
+								<td>ARRENDADAS</td>
+								<td><%= @l_cantidad %></td>
+							</tr>		
+							<tr>
+								<td>COLEGIOS</td>
+								<td><%= @s_cantidad %></td>
+							</tr>
+							<tr>
+								<td>TRANSMILENIO</td>
+								<td><%= @t_cantidad %></td>
+							</tr>
+							<tr>
+								<td>UTE</td>
+								<td><%= @u_cantidad %></td>
+							</tr>	
+							<tr>
+								<td><strong>Total</strong></td>
+								<td><%= @total_cam %></td>
+							</tr>		
+						</tbody>
+					</table>
+				</div>
+				<h4>Gráfica</h4>				
+				<div id="qty" style="margin-left: 40px;" class="row">
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= pie_chart Camera.group(:project).sum(:qty) %>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-4">
+						<%= column_chart Camera.group(:project).sum(:qty) %>
+					</div>	    	 	   	 	
+	    	</div>  		    		  				
+      </div>
+    </div>
+  </div>
+</div>

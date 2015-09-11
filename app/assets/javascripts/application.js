@@ -39,28 +39,6 @@ $(document).on('ready page:load', function(){
     toggleActive: true
   });  
 
-  //reportes
-  $('#poligonoLink').click(function(){    
-    $( "#poligono" ).fadeToggle('slow');
-  });
-
-  $('#estadoLink').click(function(){    
-    $( "#estado" ).fadeToggle('slow');
-  });
-
-  $('#cantidadLink').click(function(){    
-    $( "#cantidad" ).fadeToggle('slow');
-  });
-
-  $('#cosecLink').click(function(){    
-    $( "#cosec" ).fadeToggle('slow');
-  });
-
-  $('#localidadLink').click(function(){    
-    $( "#localidad" ).fadeToggle('slow');
-  }); 
-
-
   //smooth scroll
   $(document).ready(function(){
     $('a[href^="#"]').on('click',function (e) {
@@ -73,6 +51,5 @@ $(document).on('ready page:load', function(){
             'scrollTop': $target.offset().top
         }, 800, 'swing');
     });
-  });
+  });  
 });
-

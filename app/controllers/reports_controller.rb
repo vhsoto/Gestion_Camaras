@@ -59,6 +59,7 @@ class ReportsController < ApplicationController
   	@transmi = Camera.where(polygon: true, project: 5).all.count
     @ute = Camera.where(polygon: true, project: 6).all.count 
     @total_pol = Camera.where(polygon: true).all.count
+
   end
 
   def estado_bien

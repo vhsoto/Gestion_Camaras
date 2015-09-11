@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>FVS</title>
+
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script> 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>  
 </head>
 <body> 
   <nav class="navbar navbar-white navbar-fixed-top" role="navigation">    
@@ -40,7 +41,7 @@
         <% else %> 
         <ul class="nav navbar-nav"> 
           <li><%# link_to "Regístrate", new_user_registration_path %></li>
-          <li><%= link_to "Ingresa", new_user_session_path, class: "nav-brand pull-right" %></li>
+          <li><%= link_to "Ingresa", new_user_session_path, id: "login", class: "nav-brand pull-right" %></li>
         </ul>
       <% end %>
       </ul>
@@ -56,9 +57,10 @@
     </div>      
   </nav>    
   <br>
-	<div class="container">
+	<div class="container-fluid">
     <br><br>
 		<%= yield %>
+    <%= yield :reports %>
 	</div>
 </body>
 </html>
