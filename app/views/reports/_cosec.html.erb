@@ -1,3 +1,9 @@
+<h4>Cámaras por COSEC</h4>
+<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myCosec">
+  Ver reporte
+</button>
+
 <div class="modal fade" id="myCosec" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -6,7 +12,8 @@
         <h4 class="modal-title" id="myModalLabel">Reporte cámaras por COSEC</h4>
       </div>
       <div class="modal-body">
-      	<div class="table-responsive" >
+      	
+				<div class="table-responsive" >
 			    <table class="table table-striped">
 						<thead>
 							<tr>
@@ -62,6 +69,7 @@
 						</tbody>
 					</table>
 				</div>
+
 				<br>
 			  <div id="cosec" style="margin-left: 40px;" class="row">
 			  	<div class="col-xs-3 col-sm-3 col-md-4">
@@ -71,7 +79,15 @@
 						<%= bar_chart Camera.group(:cosec).sum(:qty) %>
 					</div>			  	
 			  </div>
+			  
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+				

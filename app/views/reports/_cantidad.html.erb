@@ -1,3 +1,9 @@
+<h4>Cámaras por cantidad según proyecto</h4>
+<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myQty">
+  Ver reporte
+</button>
+
 <div class="modal fade" id="myQty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -6,7 +12,8 @@
         <h4 class="modal-title" id="myModalLabel">Reporte cantidad de cámaras según proyecto</h4>
       </div>
       <div class="modal-body">
-      	<div class="panel panel-info table-responsive">
+      	
+				<div class="panel panel-info table-responsive">
 				  <table class="table">
 						<thead>
 							<tr>
@@ -46,6 +53,7 @@
 						</tbody>
 					</table>
 				</div>
+
 				<h4>Gráfica</h4>				
 				<div id="qty" style="margin-left: 40px;" class="row">
 					<div class="col-xs-3 col-sm-3 col-md-4">
@@ -54,8 +62,17 @@
 					<div class="col-xs-3 col-sm-3 col-md-4">
 						<%= column_chart Camera.group(:project).sum(:qty) %>
 					</div>	    	 	   	 	
-	    	</div>  		    		  				
-      </div>
+	    	</div> 
+
+			</div>			 		    		  				
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+				

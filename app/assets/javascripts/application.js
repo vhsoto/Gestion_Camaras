@@ -52,4 +52,5 @@ $(document).on('ready page:load', function(){
         }, 800, 'swing');
     });
   });  
+  
 });

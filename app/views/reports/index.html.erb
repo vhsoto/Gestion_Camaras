@@ -5,50 +5,29 @@
 	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////////-->
+	
 	<div class="container">
 		<h1>Reportes</h1>
-		<h4>Cámaras polígono</h4>
-		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myPolygon">
-		  Ver reporte
-		</button>
-		<%= render 'poligono' %>
+		<br>
+		
+		<%= render "poligono" %> 		
 
 		<hr>
-
-		<h4>Cámaras por localidad</h4>
-		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myLocation">
-		  Ver reporte
-		</button>
-		<%= render 'localidad' %>
+		
+		<%= render "localidad" %>
 
 		<hr>
-
-		<h4>Cámaras por cantidad según proyecto</h4>
-		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myQty">
-		  Ver reporte
-		</button>
+		
 		<%= render 'cantidad' %>
 
 		<hr>
-
-		<h4>Cámaras por COSEC</h4>
-		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myCosec">
-		  Ver reporte
-		</button>
+		
 		<%= render 'cosec' %>		
 
 		<hr>
-
-		<h4>Cámaras por el estado en que se encuentren</h4>
-		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In animi ratione, ipsam deleniti ipsum enim inventore dicta mollitia voluptas perferendis, sit perspiciatis laudantium eum praesentium maiores ducimus id deserunt vitae.</p>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myCondition">
-		  Ver reporte
-		</button>
+		
 		<%= render 'condicion' %>	
+
 	</div>
 	<br>
 	<br>
