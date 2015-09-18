@@ -1,9 +1,12 @@
-<% content_for :reports do %>
-	<script>
+<% content_for :additional_assets do %>
+  <script>
     var Chartkick = {"language": "es"};
   </script>
-	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <% end %>
+<% content_for :reports do %>
+  
+  
 <!-- ////////////////////////////////////////////////////////////////////////////////////////-->
 	
 	<div class="container">
